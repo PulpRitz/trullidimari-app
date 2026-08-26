@@ -100,16 +100,35 @@
 
   /* ------------------------------------------------------------------------
      1b. Tab bar: si nasconde durante lo scroll, riappare quando ci si ferma
+         davvero. Su Chrome Android lo scroll "a lancio" (col dito) manda
+         eventi "scroll" molto più diradati che su desktop/iOS Safari: un
+         timer a tempo fisso dopo l'ultimo evento scattava mentre la pagina
+         stava ancora scorrendo, sembrando "riapparire quando vuole lui".
+         "scrollend" (quando supportato) segnala lo stop reale indipendente
+         dalla frequenza degli eventi — il timer resta solo come fallback.
      ------------------------------------------------------------------------ */
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const supportsScrollend = 'onscrollend' in window;
   let scrollHideTimer = null;
-  window.addEventListener('scroll', () => {
+
+  function hideNavs() {
     document.querySelectorAll('.bottom-nav').forEach((nav) => nav.classList.add('nav-hidden'));
-    clearTimeout(scrollHideTimer);
-    scrollHideTimer = setTimeout(() => {
-      document.querySelectorAll('.bottom-nav').forEach((nav) => nav.classList.remove('nav-hidden'));
-    }, reduceMotion ? 0 : 350);
+  }
+  function showNavs() {
+    document.querySelectorAll('.bottom-nav').forEach((nav) => nav.classList.remove('nav-hidden'));
+  }
+
+  window.addEventListener('scroll', () => {
+    hideNavs();
+    if (!supportsScrollend) {
+      clearTimeout(scrollHideTimer);
+      scrollHideTimer = setTimeout(showNavs, reduceMotion ? 0 : 350);
+    }
   }, { passive: true });
+
+  if (supportsScrollend) {
+    window.addEventListener('scrollend', showNavs, { passive: true });
+  }
 
   /* ------------------------------------------------------------------------
      2. Home — righe elenco + codici + WhatsApp
