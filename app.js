@@ -50,9 +50,9 @@
     });
   }
 
-  // Nascosta del tutto sul Check-in: l'ospite deve arrivare in fondo al form
-  // senza distrazioni (nessun link di uscita a portata di pollice).
-  const TAB_BAR_HIDDEN_SCREENS = ['checkin'];
+  // Nessuna schermata la nasconde più (anche su Check-in resta, con le
+  // stesse regole di scroll delle altre pagine).
+  const TAB_BAR_HIDDEN_SCREENS = [];
 
   function updateTabBarActive(screenId) {
     const bar = document.getElementById('tabBar');
