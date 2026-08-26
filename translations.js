@@ -22,6 +22,13 @@ const TRANSLATIONS = {
 
     tabHome: "Home", tabRegole: "Regole", tabGuida: "Guida", tabVicino: "Vicino", tabContatti: "Contatti",
     emptySection: "Contenuto in arrivo — il proprietario sta completando questa sezione.",
+    installBannerTitle: "Installa l'app",
+    installBannerDesc: "Aggiungila alla schermata Home per aprirla come un'app vera.",
+    iosModalTitle: "Installa su iPhone",
+    iosStep1: "Tocca l'icona Condividi qui sotto",
+    iosStep2: "Scorri e tocca «Aggiungi alla schermata Home»",
+    iosStep3: "Conferma «Aggiungi» in alto a destra",
+    btnGotIt: "Ho capito",
     whatsappCtaHome: "Contatta l'Host",
     whatsappCtaContatti: "Scrivici su WhatsApp",
 
@@ -182,6 +189,13 @@ const TRANSLATIONS = {
 
     tabHome: "Home", tabRegole: "Rules", tabGuida: "Guide", tabVicino: "Nearby", tabContatti: "Contact",
     emptySection: "Content coming soon — the owner is completing this section.",
+    installBannerTitle: "Install the app",
+    installBannerDesc: "Add it to your Home Screen to open it like a real app.",
+    iosModalTitle: "Install on iPhone",
+    iosStep1: "Tap the Share icon below",
+    iosStep2: "Scroll and tap \"Add to Home Screen\"",
+    iosStep3: "Confirm \"Add\" in the top right",
+    btnGotIt: "Got it",
     whatsappCtaHome: "Contact the Host",
     whatsappCtaContatti: "Message us on WhatsApp",
 
@@ -342,6 +356,13 @@ const TRANSLATIONS = {
 
     tabHome: "Home", tabRegole: "Regeln", tabGuida: "Führer", tabVicino: "In der Nähe", tabContatti: "Kontakt",
     emptySection: "Inhalt folgt in Kürze — der Eigentümer vervollständigt diesen Bereich.",
+    installBannerTitle: "App installieren",
+    installBannerDesc: "Zum Home-Bildschirm hinzufügen, um sie wie eine echte App zu öffnen.",
+    iosModalTitle: "Auf dem iPhone installieren",
+    iosStep1: "Tippen Sie unten auf das Teilen-Symbol",
+    iosStep2: "Scrollen Sie und tippen Sie auf \"Zum Home-Bildschirm\"",
+    iosStep3: "Bestätigen Sie oben rechts mit \"Hinzufügen\"",
+    btnGotIt: "Verstanden",
     whatsappCtaHome: "Gastgeber kontaktieren",
     whatsappCtaContatti: "Über WhatsApp schreiben",
 
@@ -502,6 +523,13 @@ const TRANSLATIONS = {
 
     tabHome: "Accueil", tabRegole: "Règles", tabGuida: "Guide", tabVicino: "À proximité", tabContatti: "Contact",
     emptySection: "Contenu à venir — le propriétaire complète cette section.",
+    installBannerTitle: "Installer l'application",
+    installBannerDesc: "Ajoutez-la à l'écran d'accueil pour l'ouvrir comme une vraie application.",
+    iosModalTitle: "Installer sur iPhone",
+    iosStep1: "Appuyez sur l'icône Partager ci-dessous",
+    iosStep2: "Faites défiler et appuyez sur « Sur l'écran d'accueil »",
+    iosStep3: "Confirmez « Ajouter » en haut à droite",
+    btnGotIt: "Compris",
     whatsappCtaHome: "Contacter l'hôte",
     whatsappCtaContatti: "Écrivez-nous sur WhatsApp",
 

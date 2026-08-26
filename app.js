@@ -599,8 +599,72 @@
     if (e.target.id === 'privacyModal') closePrivacyModal();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePrivacyModal();
+    if (e.key === 'Escape') { closePrivacyModal(); closeIosInstallModal(); }
   });
+
+  /* ------------------------------------------------------------------------
+     8c. Installazione app — Android: prompt nativo 1-tap (beforeinstallprompt).
+         iPhone: nessuna API lo permette (blocco deliberato di Apple, non
+         aggirabile da nessun sito), mostriamo una guida passo-passo animata.
+     ------------------------------------------------------------------------ */
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const installDismissedKey = 'trulli_install_dismissed';
+  let deferredInstallPrompt = null;
+
+  function showInstallBanner() {
+    if (isStandalone) return;
+    if (localStorage.getItem(installDismissedKey)) return;
+    document.getElementById('installBanner').style.display = 'flex';
+  }
+  function hideInstallBanner() {
+    document.getElementById('installBanner').style.display = 'none';
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    showInstallBanner();
+  });
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    hideInstallBanner();
+  });
+
+  document.getElementById('installMainBtn').addEventListener('click', async () => {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      await deferredInstallPrompt.userChoice;
+      deferredInstallPrompt = null;
+      hideInstallBanner();
+    } else if (isIOS) {
+      openIosInstallModal();
+    }
+  });
+
+  document.getElementById('installDismiss').addEventListener('click', (e) => {
+    e.stopPropagation();
+    localStorage.setItem(installDismissedKey, '1');
+    hideInstallBanner();
+  });
+
+  function openIosInstallModal() {
+    document.getElementById('iosInstallModal').classList.add('open');
+    document.getElementById('iosInstallModal').setAttribute('aria-hidden', 'false');
+  }
+  function closeIosInstallModal() {
+    document.getElementById('iosInstallModal').classList.remove('open');
+    document.getElementById('iosInstallModal').setAttribute('aria-hidden', 'true');
+  }
+  document.getElementById('btnCloseIosInstall').addEventListener('click', closeIosInstallModal);
+  document.getElementById('btnIosGotIt').addEventListener('click', closeIosInstallModal);
+  document.getElementById('iosInstallModal').addEventListener('click', (e) => {
+    if (e.target.id === 'iosInstallModal') closeIosInstallModal();
+  });
+
+  // Su iPhone non esiste beforeinstallprompt: mostriamo comunque il banner
+  // (porta alla guida) se non già installata e non già chiusa dall'utente.
+  if (isIOS) showInstallBanner();
 
   /* ------------------------------------------------------------------------
      9. Icone (inline SVG, nessuna icon-font esterna)

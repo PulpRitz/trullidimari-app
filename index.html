@@ -42,6 +42,18 @@
     </div>
     <div class="home-codes" id="homeCodes"><!-- popolato da app.js --></div>
 
+    <div class="install-banner" id="installBanner" style="display:none;">
+      <button type="button" class="install-main" id="installMainBtn">
+        <span class="install-icon">📲</span>
+        <span class="install-text">
+          <span class="install-title" data-i18n="installBannerTitle">Installa l'app</span>
+          <span class="install-desc" data-i18n="installBannerDesc">Aggiungila alla schermata Home per aprirla come un'app vera.</span>
+        </span>
+        <span class="install-chevron">›</span>
+      </button>
+      <button type="button" class="install-dismiss" id="installDismiss" aria-label="Chiudi">✕</button>
+    </div>
+
     <div class="home-list" id="homeList"><!-- righe generate da app.js --></div>
 
     <a class="whatsapp-bar" id="whatsappBar" target="_blank" rel="noopener">
@@ -289,6 +301,40 @@
         <button class="modal-close" id="btnClosePrivacy" aria-label="Chiudi">✕</button>
       </div>
       <div class="modal-body" id="privacyModalBody"><!-- popolato da app.js --></div>
+    </div>
+  </div>
+
+  <!-- ======================= INSTALLA SU IPHONE (POPUP) =================== -->
+  <div class="modal-overlay" id="iosInstallModal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="iosInstallModalTitle">
+      <div class="modal-header">
+        <h2 id="iosInstallModalTitle" data-i18n="iosModalTitle">Installa su iPhone</h2>
+        <button class="modal-close" id="btnCloseIosInstall" aria-label="Chiudi">✕</button>
+      </div>
+      <div class="modal-body ios-steps">
+        <div class="ios-step">
+          <div class="ios-step-num">1</div>
+          <div class="ios-step-text" data-i18n="iosStep1">Tocca l'icona Condividi qui sotto</div>
+          <div class="ios-step-icon share-bounce">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+          </div>
+        </div>
+        <div class="ios-step">
+          <div class="ios-step-num">2</div>
+          <div class="ios-step-text" data-i18n="iosStep2">Scorri e tocca «Aggiungi alla schermata Home»</div>
+          <div class="ios-step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></svg>
+          </div>
+        </div>
+        <div class="ios-step">
+          <div class="ios-step-num">3</div>
+          <div class="ios-step-text" data-i18n="iosStep3">Conferma «Aggiungi» in alto a destra</div>
+          <div class="ios-step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+        </div>
+        <button type="button" class="btn-primary" id="btnIosGotIt" style="margin-top:8px;" data-i18n="btnGotIt">Ho capito</button>
+      </div>
     </div>
   </div>
 

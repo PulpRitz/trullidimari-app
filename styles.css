@@ -209,6 +209,76 @@ a { color: inherit; text-decoration: none; }
 }
 .home-codes strong { color: var(--text-main); }
 
+/* --------------------------------------------------------------------------
+   Banner installazione app (Android: prompt nativo 1-tap / iPhone: guida)
+   -------------------------------------------------------------------------- */
+.install-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-dark);
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.install-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  padding: 14px 40px 14px 14px;
+  text-align: left;
+  color: var(--text-light);
+}
+.install-icon { font-size: 1.5rem; flex: 0 0 auto; }
+.install-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.install-title { font-weight: 700; font-size: 0.88rem; }
+.install-desc { font-size: 0.74rem; color: rgba(249,247,245,0.75); }
+.install-chevron { color: rgba(249,247,245,0.6); font-size: 1.2rem; flex: 0 0 auto; }
+.install-dismiss {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: none;
+  border: none;
+  color: rgba(249,247,245,0.55);
+  font-size: 0.85rem;
+  padding: 6px;
+}
+
+/* Popup istruzioni iPhone */
+.ios-steps { display: flex; flex-direction: column; gap: 18px; }
+.ios-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-warm);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+.ios-step-num {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--color-olive-dark);
+  color: var(--text-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.ios-step-text { flex: 1; font-size: 0.86rem; }
+.ios-step-icon { color: var(--color-terracotta); flex: 0 0 auto; }
+.ios-step-icon.share-bounce { animation: shareBounce 1.4s ease-in-out infinite; }
+@keyframes shareBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ios-step-icon.share-bounce { animation: none; }
+}
+
 .home-list {
   display: flex;
   flex-direction: column;
