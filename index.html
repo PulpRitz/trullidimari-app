@@ -61,7 +61,6 @@
       <span data-i18n="whatsappCtaHome">Contatta l'Host</span>
     </a>
 
-    <nav class="bottom-nav" id="bottomNav"><!-- generata da app.js --></nav>
   </section>
 
   <!-- ============================ CHECK-IN ============================= -->
@@ -118,7 +117,6 @@
       </button>
     </form>
 
-    <nav class="bottom-nav" id="bottomNavCheckin"></nav>
   </section>
 
   <!-- =================== CHECK-IN — CONFERMA / SUCCESSO ================= -->
@@ -174,7 +172,6 @@
       <button class="btn-secondary" id="btnRescanWifi" data-i18n="btnRescan">Scansiona di nuovo</button>
     </div>
 
-    <nav class="bottom-nav" id="bottomNavWifi"></nav>
   </section>
 
   <!-- ========================== REGOLE DELLA CASA ======================== -->
@@ -198,7 +195,6 @@
 
     <div class="tax-box" id="taxBox" style="display:none;"></div>
 
-    <nav class="bottom-nav" id="bottomNavRegole"></nav>
   </section>
 
   <!-- ================================ FAQ ================================ -->
@@ -214,7 +210,6 @@
     </div>
     <div id="faqList"><!-- popolato da app.js --></div>
 
-    <nav class="bottom-nav" id="bottomNavFaq"></nav>
   </section>
 
   <!-- ============================= GUIDA (Da Visitare) ==================== -->
@@ -229,7 +224,6 @@
     <p class="section-sub" data-i18n="guidaSub">Dalla Valle d'Itria al mare: i luoghi che consigliamo ai nostri ospiti.</p>
     <div class="location-list" data-source="guida"></div>
 
-    <nav class="bottom-nav" id="bottomNavGuida"></nav>
   </section>
 
   <!-- ============================ TUTTO A DUE PASSI ======================== -->
@@ -246,7 +240,6 @@
     <p class="section-sub" data-i18n="duepassiSub">Panificio, servizi, ristorante e centro commerciale a due passi dal trullo.</p>
     <div class="location-list" data-source="dueAPasi"></div>
 
-    <nav class="bottom-nav" id="bottomNavDuePassi"></nav>
   </section>
 
   <!-- =============================== CONTATTI ============================== -->
@@ -289,9 +282,13 @@
       </div>
     </div>
 
-
-    <nav class="bottom-nav" id="bottomNavContatti"></nav>
   </section>
+
+  <!-- Tab bar unica, fuori da tutte le .screen: un elemento position:fixed
+       dentro un antenato con animazione (.screen ha "animation: fadeIn" con
+       transform) crea un containing block diverso dal viewport e rompe il
+       posizionamento fisso su molti browser mobile — per questo sta qui. -->
+  <nav class="bottom-nav" id="bottomNav"></nav>
 
   <!-- =========================== INFORMATIVA PRIVACY (POPUP) ============== -->
   <div class="modal-overlay" id="privacyModal" aria-hidden="true">

@@ -55,12 +55,22 @@
     });
   }
 
+  // Quale tab in basso risulta attiva per ciascuna schermata (le schermate
+  // raggiunte da riga home — checkin/wifi/faq — non hanno una tab propria).
+  const SCREEN_TO_TAB = {
+    home: 'home', regole: 'regole', guida: 'guida', duepassi: 'duepassi', contatti: 'contatti',
+  };
+
   function goTo(screenId) {
     document.querySelectorAll('.screen').forEach((s) => s.classList.remove('active'));
     const target = document.getElementById('screen-' + screenId);
     if (target) target.classList.add('active');
     window.scrollTo(0, 0);
     if (screenId !== 'wifi') stopWifiScan();
+
+    const nav = document.getElementById('bottomNav');
+    nav.style.display = screenId === 'checkin-success' ? 'none' : 'flex';
+    renderBottomNav(SCREEN_TO_TAB[screenId] || '');
   }
 
   document.addEventListener('click', (e) => {
@@ -69,29 +79,17 @@
   });
 
   /* ------------------------------------------------------------------------
-     1. Tab bar in basso — renderizzata in ogni contenitore .bottom-nav,
-        con lo stato attivo giusto per quella schermata
+     1. Tab bar in basso — un solo elemento, fuori da ogni .screen (vedi
+        commento in index.html sul perché non può stare dentro una .screen)
      ------------------------------------------------------------------------ */
-  function renderBottomNav(containerId, activeTabId) {
-    const el = document.getElementById(containerId);
-    if (!el) return;
+  function renderBottomNav(activeTabId) {
+    const el = document.getElementById('bottomNav');
     el.innerHTML = TAB_ITEMS.map((tab) => `
       <button class="tab-btn ${tab.id === activeTabId ? 'active' : ''}" data-nav="${tab.id}">
         ${tab.icon()}
         <span>${t(tab.labelKey)}</span>
       </button>
     `).join('');
-  }
-
-  function renderAllBottomNavs() {
-    renderBottomNav('bottomNav', 'home');
-    renderBottomNav('bottomNavCheckin', '');
-    renderBottomNav('bottomNavWifi', '');
-    renderBottomNav('bottomNavFaq', '');
-    renderBottomNav('bottomNavRegole', 'regole');
-    renderBottomNav('bottomNavGuida', 'guida');
-    renderBottomNav('bottomNavDuePassi', 'duepassi');
-    renderBottomNav('bottomNavContatti', 'contatti');
   }
 
   /* ------------------------------------------------------------------------
@@ -693,7 +691,10 @@
     renderLocationLists();
     renderWifi();
     renderPrivacyModal();
-    renderAllBottomNavs();
+    // Il cambio lingua è raggiungibile solo dalla Home (vedi selettore
+    // disabilitato altrove), quindi qui la tab attiva è sempre "home".
+    renderBottomNav('home');
+    document.getElementById('bottomNav').style.display = 'flex';
   }
 
   // Cambio lingua: disponibile solo dal selettore in Home (le altre schermate
