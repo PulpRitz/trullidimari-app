@@ -48,16 +48,23 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; overflow-x: hidden; }
+/* Solo html ha height:100% fisso: se anche body lo avesse, con contenuto più
+   alto del viewport body diventerebbe un proprio contenitore di scroll
+   interno (body.scrollTop) invece di far scrollare il documento — così
+   window.scrollY resta sempre 0 e la tab bar (che ascolta "scroll" su
+   window) non riceve mai eventi. body usa min-height per restare comunque
+   alto quanto lo schermo sulle pagine corte. */
+html { height: 100%; overflow-x: hidden; }
 
 body {
   margin: 0;
   width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
   font-family: var(--font-sans);
   background: var(--bg-main);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
-  overscroll-behavior-y: contain;
 }
 
 img { max-width: 100%; display: block; }
@@ -441,29 +448,33 @@ a { color: inherit; text-decoration: none; }
 /* --------------------------------------------------------------------------
    Regole della Casa
    -------------------------------------------------------------------------- */
-.rule-times {
+.rule-section { margin-bottom: 22px; }
+.rule-section-title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-olive-dark);
+  margin: 0 0 10px;
+}
+.rule-section-title .icn { font-size: 1.05rem; }
+.rule-prose {
   background: var(--bg-surface);
   border-radius: var(--radius-md);
-  padding: 16px;
-  margin-bottom: 16px;
-  font-size: 0.92rem;
   box-shadow: var(--shadow-sm);
+  padding: 6px 16px;
 }
-.rule-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
-.rule-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: var(--bg-surface);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
-  box-shadow: var(--shadow-sm);
-  font-size: 0.9rem;
+.rule-prose ul { margin: 0; padding: 0; list-style: none; }
+.rule-prose li {
+  padding: 12px 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-main);
 }
-.rule-item .rule-emoji { font-size: 1.2rem; line-height: 1; }
+.rule-prose li + li { border-top: 1px solid var(--border-subtle); }
+.rule-prose li.muted { color: var(--text-muted); font-size: 0.82rem; }
 
 .tax-box {
   background: var(--bg-warm);

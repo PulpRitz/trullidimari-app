@@ -174,7 +174,7 @@
 
   </section>
 
-  <!-- ========================== REGOLE DELLA CASA ======================== -->
+  <!-- ==================== REGOLE DELLA CASA (selettore) ================== -->
   <section id="screen-regole" class="screen">
     <div class="screen-header">
       <div class="screen-header-left">
@@ -186,14 +186,86 @@
       <select class="lang-select" disabled><option>🇮🇹</option></select>
     </div>
 
-    <div class="rule-times">
-      <span>🕒</span>
-      <span id="ruleTimesText"></span>
+    <p class="section-sub" data-i18n="regoleChooserSub">Seleziona il tuo trullo per consultare le regole della casa.</p>
+
+    <div class="tax-box" id="taxBox" style="display:none; margin-bottom:16px;"></div>
+
+    <div class="home-list">
+      <button class="list-row" data-nav="regole-incanto">
+        <span class="row-icon">📋</span>
+        <span class="row-text">
+          <span class="row-title" data-i18n="regoleIncantoTitle">Trullo Incanto</span>
+          <span class="row-desc" data-i18n="regoleIncantoDesc">Regole della casa e info pratiche</span>
+        </span>
+        <span class="row-chevron">›</span>
+      </button>
+      <button class="list-row" data-nav="regole-nido">
+        <span class="row-icon">📋</span>
+        <span class="row-text">
+          <span class="row-title" data-i18n="regoleNidoTitle">Trullo Il Nido</span>
+          <span class="row-desc" data-i18n="regoleNidoDesc">Regole della casa e info pratiche</span>
+        </span>
+        <span class="row-chevron">›</span>
+      </button>
     </div>
 
-    <div class="rule-list" id="ruleList"><!-- popolato da app.js --></div>
+  </section>
 
-    <div class="tax-box" id="taxBox" style="display:none;"></div>
+  <!-- ==================== REGOLE DELLA CASA — TRULLO INCANTO ============= -->
+  <section id="screen-regole-incanto" class="screen">
+    <div class="screen-header">
+      <div class="screen-header-left">
+        <button class="btn-back" data-nav="regole" aria-label="Torna alle Regole della Casa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <h2 class="screen-title">📋 <span data-i18n="ruleIncantoScreenTitle">Regole — Trullo Incanto</span></h2>
+      </div>
+      <select class="lang-select" disabled><option>🇮🇹</option></select>
+    </div>
+
+    <div class="rule-section">
+      <h3 class="rule-section-title"><span class="icn">⚠️</span> <span data-i18n="ruleSectionGeneraleTitle">Regole generali</span></h3>
+      <div class="rule-prose"><ul data-i18n="ruleIncantoGeneraleHtml"></ul></div>
+    </div>
+
+    <div class="rule-section">
+      <h3 class="rule-section-title"><span class="icn">🏡</span> <span data-i18n="ruleSectionPraticheTitle">Note pratiche casa</span></h3>
+      <div class="rule-prose"><ul data-i18n="ruleIncantoPraticheHtml"></ul></div>
+    </div>
+
+    <div class="rule-section">
+      <h3 class="rule-section-title"><span class="icn">📺</span> <span data-i18n="ruleSectionTvTitle">Canali satellitari e digitali</span></h3>
+      <div class="rule-prose"><ul data-i18n="ruleIncantoTvHtml"></ul></div>
+    </div>
+
+  </section>
+
+  <!-- ==================== REGOLE DELLA CASA — TRULLO IL NIDO ============= -->
+  <section id="screen-regole-nido" class="screen">
+    <div class="screen-header">
+      <div class="screen-header-left">
+        <button class="btn-back" data-nav="regole" aria-label="Torna alle Regole della Casa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <h2 class="screen-title">📋 <span data-i18n="ruleNidoScreenTitle">Regole — Trullo Il Nido</span></h2>
+      </div>
+      <select class="lang-select" disabled><option>🇮🇹</option></select>
+    </div>
+
+    <div class="rule-section">
+      <h3 class="rule-section-title"><span class="icn">⚠️</span> <span data-i18n="ruleSectionGeneraleTitle">Regole generali</span></h3>
+      <div class="rule-prose"><ul data-i18n="ruleNidoGeneraleHtml"></ul></div>
+    </div>
+
+    <div class="rule-section">
+      <h3 class="rule-section-title"><span class="icn">🏡</span> <span data-i18n="ruleSectionPraticheTitle">Note pratiche casa</span></h3>
+      <div class="rule-prose"><ul data-i18n="ruleNidoPraticheHtml"></ul></div>
+    </div>
+
+    <div class="rule-section">
+      <h3 class="rule-section-title"><span class="icn">📺</span> <span data-i18n="ruleSectionTvTitle">Canali satellitari e digitali</span></h3>
+      <div class="rule-prose"><ul data-i18n="ruleNidoTvHtml"></ul></div>
+    </div>
 
   </section>
 

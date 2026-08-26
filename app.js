@@ -106,19 +106,11 @@
   }
 
   /* ------------------------------------------------------------------------
-     4. Regole della Casa
+     4. Regole della Casa — contenuto reale (Incanto/Nido) è statico via
+        data-i18n direttamente in index.html; qui resta solo la tassa di
+        soggiorno, mostrata nel selettore prima della scelta del trullo.
      ------------------------------------------------------------------------ */
   function renderRegole() {
-    document.getElementById('ruleTimesText').textContent =
-      `${t('ruleCheckinFrom')} ${APP_DATA.checkin.checkInTime}. ${t('ruleCheckoutBy')} ${APP_DATA.checkin.checkOutTime}.`;
-
-    document.getElementById('ruleList').innerHTML = APP_DATA.houseRules.map((r) => `
-      <div class="rule-item">
-        <span class="rule-emoji">${r.emoji}</span>
-        <span>${t(r.textKey)}</span>
-      </div>
-    `).join('');
-
     const taxBox = document.getElementById('taxBox');
     if (APP_DATA.touristTax.enabled) {
       taxBox.style.display = 'block';

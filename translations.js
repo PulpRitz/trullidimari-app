@@ -91,22 +91,67 @@ const TRANSLATIONS = {
     btnRescan: "Scansiona di nuovo",
 
     regoleScreenTitle: "Regole della Casa",
-    ruleCheckinFrom: "Check-in dalle",
-    ruleCheckoutBy: "Check-out entro le",
-    rule1: "Assoluto divieto di fumo all'interno degli ambienti.",
-    rule2: "Effettuare correttamente la raccolta differenziata (info bidoni in cucina).",
-    rule3: "Rispettare gli orari di silenzio (22:00 - 08:00), siamo in un contesto rurale.",
-    rule4: "Vietato organizzare feste o eventi.",
+    regoleChooserSub: "Seleziona il tuo trullo per consultare le regole della casa.",
+    regoleIncantoTitle: "Trullo Incanto",
+    regoleIncantoDesc: "Regole della casa e info pratiche",
+    regoleNidoTitle: "Trullo Il Nido",
+    regoleNidoDesc: "Regole della casa e info pratiche",
+
+    ruleIncantoScreenTitle: "Regole — Trullo Incanto",
+    ruleNidoScreenTitle: "Regole — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "Regole generali",
+    ruleSectionPraticheTitle: "Note pratiche casa",
+    ruleSectionTvTitle: "Canali satellitari e digitali",
+
+    ruleIncantoGeneraleHtml: `
+      <li>È vietato fumare all'interno della casa.</li>
+      <li>L'acqua dei rubinetti non è potabile.</li>
+      <li>Non usare alcool per accendere il barbecue.</li>
+      <li>I bambini devono essere sempre accompagnati da un adulto nell'area giochi.</li>
+      <li class="muted">In caso di danni all'appartamento o agli arredi, l'ospite è tenuto a informare i proprietari, che si riservano di richiedere l'importo dei danni.</li>
+      <li class="muted">I proprietari declinano ogni responsabilità per infortuni ad adulti e minori, per smarrimento, furto o danneggiamento di oggetti degli ospiti, e per danni o furti alle autovetture in parcheggio.</li>
+      <li class="muted">Particolare attenzione alle chiavi di casa e al telecomando del cancello: in caso di smarrimento o deterioramento, le spese di sostituzione (serratura / telecomando) sono a carico dell'ospite.</li>
+    `,
+    ruleIncantoPraticheHtml: `
+      <li>Il cambio degli asciugamani si trova nei cassetti delle camere da letto.</li>
+      <li>Le luci del viale, piazzale e giardino si accendono/spengono da sole. Quelle su porta d'ingresso e finestre si comandano dagli interruttori.</li>
+      <li>In assenza di corrente elettrica, sbloccare manualmente il cancello con l'apposita chiave.</li>
+      <li>Chiudere le finestre esterne ogni volta che si esce dal trullo.</li>
+      <li>Chiudere la finestra oblò della camera da letto se si prevede pioggia.</li>
+      <li>Chiudere il gazebo in caso di vento forte.</li>
+      <li>La sera, chiudere le sedie sdraio (per evitare che salgano i gatti); in caso di pioggia rientrarle in casa.</li>
+      <li><strong>Riscaldamento a legna</strong>: mantenere il display tra 60° e 70°, non superare mai 80°. Non lasciare troppa cenere nel caminetto — rimuoverla ogni 2-3 giorni nell'apposito secchio.</li>
+    `,
+    ruleIncantoTvHtml: `
+      <li><strong>Canali satellitari</strong> — Accendere la TV, premere "LIST" sul telecomando, poi il tasto rosso. Sulla TV selezionare "Satellite" con la freccia ▼, premere "OK" sul telecomando, poi di nuovo "OK" con la freccia ▼ sulla TV, confermare con "OK".</li>
+      <li><strong>Canali digitali italiani</strong> — Accendere la TV, premere "LIST" sul telecomando, poi il tasto rosso. Sulla TV selezionare "Antenna" con la freccia ▲, premere "OK" sul telecomando, poi di nuovo "OK" con la freccia ▼ sulla TV, confermare con "OK".</li>
+    `,
+
+    ruleNidoGeneraleHtml: `
+      <li>È vietato fumare all'interno della casa.</li>
+      <li>L'acqua dei rubinetti non è potabile.</li>
+      <li>Non usare alcool per accendere il barbecue.</li>
+      <li>I bambini devono essere sempre accompagnati da un adulto nell'area giochi.</li>
+      <li class="muted">In caso di danni all'appartamento o agli arredi, l'ospite è tenuto a informare i proprietari, che si riservano di richiedere l'importo dei danni.</li>
+      <li class="muted">I proprietari declinano ogni responsabilità per infortuni ad adulti e minori, per smarrimento, furto o danneggiamento di oggetti degli ospiti, e per danni o furti alle autovetture in parcheggio.</li>
+      <li class="muted">Particolare attenzione alle chiavi di casa e al telecomando del cancello: in caso di smarrimento o deterioramento, le spese di sostituzione (serratura / telecomando) sono a carico dell'ospite.</li>
+    `,
+    ruleNidoPraticheHtml: `
+      <li>Il cambio degli asciugamani si trova nei cassetti della camera da letto.</li>
+      <li>Le luci del viale, piazzale e giardino si accendono/spengono da sole. Quelle del gazebo e della zona barbecue si comandano dagli interruttori.</li>
+      <li>In assenza di corrente elettrica, sbloccare manualmente il cancello con l'apposita chiave.</li>
+      <li>La sera, chiudere le sedie sdraio (per evitare che salgano i gatti); in caso di pioggia riporle sotto il gazebo.</li>
+    `,
+    ruleNidoTvHtml: `
+      <li><strong>Canali satellitari</strong> — Accendere la TV, premere "LIST" sul telecomando, poi il tasto rosso. Sulla TV selezionare "Satellite" con la freccia ▼, premere "OK" sul telecomando, poi "EXIT".</li>
+      <li><strong>Canali digitali italiani</strong> — Accendere la TV, premere "LIST" sul telecomando, poi il tasto rosso. Sulla TV selezionare "Antenna" con la freccia ▲, premere "OK" sul telecomando, poi "EXIT".</li>
+    `,
 
     faqScreenTitle: "FAQ",
     faqQ1: "Fornite lenzuola e asciugamani?",
     faqA1: "Sì, forniamo biancheria pulita e un set di asciugamani per ogni ospite.",
     faqQ2: "La cucina è attrezzata?",
     faqA2: "Certamente. Troverai pentole, padelle, piatti e posate.",
-    faqQ3: "Quanto dista il mare?",
-    faqA3: "Le spiagge più vicine (Savelletri) distano circa 13 km, 15-20 minuti in auto.",
-    faqQ4: "Quanto dista il centro di Locorotondo?",
-    faqA4: "Il centro di Locorotondo è a circa 4 km, 10 minuti in auto.",
 
     guidaScreenTitle: "Guida ai Dintorni",
     guidaSub: "Dalla Valle d'Itria al mare: i luoghi che consigliamo ai nostri ospiti.",
@@ -194,6 +239,7 @@ const TRANSLATIONS = {
     navDoveSiamoTitle: "Where We Are",
     navDoveSiamoDesc: "Address, map and how to reach us.",
 
+
     emptySection: "Content coming soon — the owner is completing this section.",
     installBannerTitle: "Install the app",
     installBannerDesc: "Add it to your Home Screen to open it like a real app.",
@@ -261,22 +307,67 @@ const TRANSLATIONS = {
     btnRescan: "Scan again",
 
     regoleScreenTitle: "House Rules",
-    ruleCheckinFrom: "Check-in from",
-    ruleCheckoutBy: "Check-out by",
-    rule1: "Smoking is strictly forbidden indoors.",
-    rule2: "Please sort waste correctly for recycling (bin info in the kitchen).",
-    rule3: "Please respect quiet hours (10 PM - 8 AM), we are in a rural setting.",
-    rule4: "Parties or events are not allowed.",
+    regoleChooserSub: "Select your trullo to view the house rules.",
+    regoleIncantoTitle: "Trullo Incanto",
+    regoleIncantoDesc: "House rules and practical info",
+    regoleNidoTitle: "Trullo Il Nido",
+    regoleNidoDesc: "House rules and practical info",
+
+    ruleIncantoScreenTitle: "House Rules — Trullo Incanto",
+    ruleNidoScreenTitle: "House Rules — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "General rules",
+    ruleSectionPraticheTitle: "Practical notes",
+    ruleSectionTvTitle: "Satellite & digital channels",
+
+    ruleIncantoGeneraleHtml: `
+      <li>Smoking is not allowed inside the house.</li>
+      <li>Tap water is not drinkable.</li>
+      <li>Do not use alcohol to light the barbecue.</li>
+      <li>Children must always be accompanied by an adult in the play area.</li>
+      <li class="muted">If the guest causes any kind of damage inside the apartment or to the furnishings, they must inform the owners, who reserve the right to charge for the damage.</li>
+      <li class="muted">The owners decline all responsibility for injuries to adults and minors, for loss, theft or damage to guests' belongings, and for damage or theft affecting cars in the parking area.</li>
+      <li class="muted">Please take special care of the house keys and the gate remote control: if lost or damaged, the cost of replacing the front door lock and/or the remote control will be charged to the guest.</li>
+    `,
+    ruleIncantoPraticheHtml: `
+      <li>Fresh towels are kept in the bedroom drawers.</li>
+      <li>The driveway, courtyard and garden lights switch on and off automatically; the ones on the front door and windows are controlled by switches.</li>
+      <li>If there is a power outage, unlock the gate manually with the dedicated key.</li>
+      <li>Close the outside windows every time you leave the trullo.</li>
+      <li>Close the bedroom porthole window if rain is expected.</li>
+      <li>Close the gazebo in case of strong wind.</li>
+      <li>In the evening, fold up the sun loungers (to keep the cats off them); bring them inside if it rains.</li>
+      <li><strong>Wood-burning heating</strong>: keep the display between 60° and 70°, never above 80°. Don't let too much ash build up in the fireplace — remove the excess every 2-3 days into the designated bucket.</li>
+    `,
+    ruleIncantoTvHtml: `
+      <li><strong>Satellite channels</strong> — Turn on the TV, press "LIST" on the remote, then the red button. On the TV, select "Satellite" using the ▼ arrow, press "OK" on the remote, then "OK" again with the ▼ arrow on the TV, and confirm with "OK".</li>
+      <li><strong>Italian digital channels</strong> — Turn on the TV, press "LIST" on the remote, then the red button. On the TV, select "Antenna" using the ▲ arrow, press "OK" on the remote, then "OK" again with the ▼ arrow on the TV, and confirm with "OK".</li>
+    `,
+
+    ruleNidoGeneraleHtml: `
+      <li>Smoking is not allowed inside the house.</li>
+      <li>Tap water is not drinkable.</li>
+      <li>Do not use alcohol to light the barbecue.</li>
+      <li>Children must always be accompanied by an adult in the play area.</li>
+      <li class="muted">If the guest causes any kind of damage inside the apartment or to the furnishings, they must inform the owners, who reserve the right to charge for the damage.</li>
+      <li class="muted">The owners decline all responsibility for injuries to adults and minors, for loss, theft or damage to guests' belongings, and for damage or theft affecting cars in the parking area.</li>
+      <li class="muted">Please take special care of the house keys and the gate remote control: if lost or damaged, the cost of replacing the front door lock and/or the remote control will be charged to the guest.</li>
+    `,
+    ruleNidoPraticheHtml: `
+      <li>Fresh towels are kept in the bedroom drawers.</li>
+      <li>The driveway, courtyard and garden lights switch on and off automatically; the ones in the gazebo and barbecue area are controlled by switches.</li>
+      <li>If there is a power outage, unlock the gate manually with the dedicated key.</li>
+      <li>In the evening, fold up the sun loungers (to keep the cats off them); if it rains, store them under the gazebo.</li>
+    `,
+    ruleNidoTvHtml: `
+      <li><strong>Satellite channels</strong> — Turn on the TV, press "LIST" on the remote, then the red button. On the TV, select "Satellite" using the ▼ arrow, press "OK" on the remote, then "EXIT".</li>
+      <li><strong>Italian digital channels</strong> — Turn on the TV, press "LIST" on the remote, then the red button. On the TV, select "Antenna" using the ▲ arrow, press "OK" on the remote, then "EXIT".</li>
+    `,
 
     faqScreenTitle: "FAQ",
     faqQ1: "Do you provide bed linen and towels?",
     faqA1: "Yes, we provide clean linen and a set of towels for each guest.",
     faqQ2: "Is the kitchen fully equipped?",
     faqA2: "Absolutely. You'll find pots, pans, dishes and cutlery.",
-    faqQ3: "How far is the sea?",
-    faqA3: "The nearest beaches (Savelletri) are about 13 km away, 15-20 minutes by car.",
-    faqQ4: "How far is Locorotondo town centre?",
-    faqA4: "Locorotondo town centre is about 4 km away, 10 minutes by car.",
 
     guidaScreenTitle: "Local Guide",
     guidaSub: "From the Itria Valley to the sea: the places we recommend to our guests.",
@@ -364,6 +455,7 @@ const TRANSLATIONS = {
     navDoveSiamoTitle: "Wo wir sind",
     navDoveSiamoDesc: "Adresse, Karte und Anfahrt.",
 
+
     emptySection: "Inhalt folgt in Kürze — der Eigentümer vervollständigt diesen Bereich.",
     installBannerTitle: "App installieren",
     installBannerDesc: "Zum Home-Bildschirm hinzufügen, um sie wie eine echte App zu öffnen.",
@@ -431,22 +523,67 @@ const TRANSLATIONS = {
     btnRescan: "Erneut scannen",
 
     regoleScreenTitle: "Hausordnung",
-    ruleCheckinFrom: "Check-in ab",
-    ruleCheckoutBy: "Check-out bis",
-    rule1: "Rauchen in den Innenräumen ist strengstens untersagt.",
-    rule2: "Bitte trennen Sie den Müll korrekt (Infos zu den Tonnen in der Küche).",
-    rule3: "Bitte beachten Sie die Ruhezeiten (22:00 - 08:00 Uhr), wir befinden uns in ländlicher Umgebung.",
-    rule4: "Feiern oder Veranstaltungen sind nicht gestattet.",
+    regoleChooserSub: "Wählen Sie Ihren Trullo, um die Hausordnung anzuzeigen.",
+    regoleIncantoTitle: "Trullo Incanto",
+    regoleIncantoDesc: "Hausordnung und praktische Infos",
+    regoleNidoTitle: "Trullo Il Nido",
+    regoleNidoDesc: "Hausordnung und praktische Infos",
+
+    ruleIncantoScreenTitle: "Hausordnung — Trullo Incanto",
+    ruleNidoScreenTitle: "Hausordnung — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "Allgemeine Regeln",
+    ruleSectionPraticheTitle: "Praktische Hinweise",
+    ruleSectionTvTitle: "Satelliten- und Digitalkanäle",
+
+    ruleIncantoGeneraleHtml: `
+      <li>Das Rauchen im Haus ist nicht gestattet.</li>
+      <li>Das Leitungswasser ist nicht trinkbar.</li>
+      <li>Verwenden Sie keinen Alkohol zum Anzünden des Grills.</li>
+      <li>Kinder müssen im Spielbereich stets von einem Erwachsenen begleitet werden.</li>
+      <li class="muted">Verursacht der Gast Schäden jeglicher Art in der Wohnung oder an der Einrichtung, ist er verpflichtet, die Eigentümer zu informieren, die sich vorbehalten, den entsprechenden Schadensbetrag in Rechnung zu stellen.</li>
+      <li class="muted">Die Eigentümer übernehmen keine Haftung für Unfälle von Erwachsenen und Minderjährigen, für Verlust, Diebstahl oder Beschädigung von Gegenständen der Gäste sowie für Schäden oder Diebstähle an auf dem Parkplatz abgestellten Fahrzeugen.</li>
+      <li class="muted">Besondere Sorgfalt gilt den Hausschlüsseln und der Fernbedienung für das Tor: Bei Verlust oder Beschädigung werden dem Gast die Kosten für den Austausch des Türschlosses bzw. der Fernbedienung in Rechnung gestellt.</li>
+    `,
+    ruleIncantoPraticheHtml: `
+      <li>Frische Handtücher befinden sich in den Schubladen der Schlafzimmer.</li>
+      <li>Die Beleuchtung von Zufahrt, Vorplatz und Garten schaltet sich automatisch ein und aus; die Lichter an Eingangstür und Fenstern werden über Schalter bedient.</li>
+      <li>Bei Stromausfall das Tor manuell mit dem dafür vorgesehenen Schlüssel entriegeln.</li>
+      <li>Schließen Sie die Außenfenster jedes Mal, wenn Sie den Trullo verlassen.</li>
+      <li>Bei angekündigtem Regen das Bullaugenfenster im Schlafzimmer schließen.</li>
+      <li>Bei starkem Wind den Pavillon (Gazebo) schließen.</li>
+      <li>Klappen Sie abends die Liegestühle zusammen (damit die Katzen nicht hinaufklettern); bei Regen bringen Sie sie ins Haus.</li>
+      <li><strong>Holzheizung</strong>: Halten Sie die Anzeige zwischen 60° und 70°, nie über 80°. Lassen Sie nicht zu viel Asche im Kamin — entfernen Sie sie alle 2-3 Tage in den dafür vorgesehenen Eimer.</li>
+    `,
+    ruleIncantoTvHtml: `
+      <li><strong>Satellitenkanäle</strong> — Schalten Sie den Fernseher ein, drücken Sie "LIST" auf der Fernbedienung, dann die rote Taste. Wählen Sie auf dem Fernseher mit der Pfeiltaste ▼ "Satellite", drücken Sie "OK" auf der Fernbedienung, dann erneut "OK" mit der Pfeiltaste ▼ auf dem Fernseher, und bestätigen Sie mit "OK".</li>
+      <li><strong>Italienische Digitalkanäle</strong> — Schalten Sie den Fernseher ein, drücken Sie "LIST" auf der Fernbedienung, dann die rote Taste. Wählen Sie auf dem Fernseher mit der Pfeiltaste ▲ "Antenna", drücken Sie "OK" auf der Fernbedienung, dann erneut "OK" mit der Pfeiltaste ▼ auf dem Fernseher, und bestätigen Sie mit "OK".</li>
+    `,
+
+    ruleNidoGeneraleHtml: `
+      <li>Das Rauchen im Haus ist nicht gestattet.</li>
+      <li>Das Leitungswasser ist nicht trinkbar.</li>
+      <li>Verwenden Sie keinen Alkohol zum Anzünden des Grills.</li>
+      <li>Kinder müssen im Spielbereich stets von einem Erwachsenen begleitet werden.</li>
+      <li class="muted">Verursacht der Gast Schäden jeglicher Art in der Wohnung oder an der Einrichtung, ist er verpflichtet, die Eigentümer zu informieren, die sich vorbehalten, den entsprechenden Schadensbetrag in Rechnung zu stellen.</li>
+      <li class="muted">Die Eigentümer übernehmen keine Haftung für Unfälle von Erwachsenen und Minderjährigen, für Verlust, Diebstahl oder Beschädigung von Gegenständen der Gäste sowie für Schäden oder Diebstähle an auf dem Parkplatz abgestellten Fahrzeugen.</li>
+      <li class="muted">Besondere Sorgfalt gilt den Hausschlüsseln und der Fernbedienung für das Tor: Bei Verlust oder Beschädigung werden dem Gast die Kosten für den Austausch des Türschlosses bzw. der Fernbedienung in Rechnung gestellt.</li>
+    `,
+    ruleNidoPraticheHtml: `
+      <li>Frische Handtücher befinden sich in den Schubladen des Schlafzimmers.</li>
+      <li>Die Beleuchtung von Zufahrt, Vorplatz und Garten schaltet sich automatisch ein und aus; die Lichter am Pavillon und im Grillbereich werden über Schalter bedient.</li>
+      <li>Bei Stromausfall das Tor manuell mit dem dafür vorgesehenen Schlüssel entriegeln.</li>
+      <li>Klappen Sie abends die Liegestühle zusammen (damit die Katzen nicht hinaufklettern); bei Regen stellen Sie sie unter den Pavillon.</li>
+    `,
+    ruleNidoTvHtml: `
+      <li><strong>Satellitenkanäle</strong> — Schalten Sie den Fernseher ein, drücken Sie "LIST" auf der Fernbedienung, dann die rote Taste. Wählen Sie auf dem Fernseher mit der Pfeiltaste ▼ "Satellite", drücken Sie "OK" auf der Fernbedienung, dann "EXIT".</li>
+      <li><strong>Italienische Digitalkanäle</strong> — Schalten Sie den Fernseher ein, drücken Sie "LIST" auf der Fernbedienung, dann die rote Taste. Wählen Sie auf dem Fernseher mit der Pfeiltaste ▲ "Antenna", drücken Sie "OK" auf der Fernbedienung, dann "EXIT".</li>
+    `,
 
     faqScreenTitle: "FAQ",
     faqQ1: "Stellen Sie Bettwäsche und Handtücher zur Verfügung?",
     faqA1: "Ja, wir stellen saubere Wäsche und ein Handtuchset für jeden Gast bereit.",
     faqQ2: "Ist die Küche ausgestattet?",
     faqA2: "Selbstverständlich. Sie finden Töpfe, Pfannen, Geschirr und Besteck vor.",
-    faqQ3: "Wie weit ist es zum Meer?",
-    faqA3: "Die nächsten Strände (Savelletri) sind etwa 13 km entfernt, 15-20 Minuten mit dem Auto.",
-    faqQ4: "Wie weit ist es zum Zentrum von Locorotondo?",
-    faqA4: "Das Zentrum von Locorotondo ist etwa 4 km entfernt, 10 Minuten mit dem Auto.",
 
     guidaScreenTitle: "Ausflugsführer",
     guidaSub: "Vom Valle d'Itria bis ans Meer: die Orte, die wir unseren Gästen empfehlen.",
@@ -534,6 +671,7 @@ const TRANSLATIONS = {
     navDoveSiamoTitle: "Où Nous Sommes",
     navDoveSiamoDesc: "Adresse, carte et comment nous rejoindre.",
 
+
     emptySection: "Contenu à venir — le propriétaire complète cette section.",
     installBannerTitle: "Installer l'application",
     installBannerDesc: "Ajoutez-la à l'écran d'accueil pour l'ouvrir comme une vraie application.",
@@ -601,22 +739,67 @@ const TRANSLATIONS = {
     btnRescan: "Scanner à nouveau",
 
     regoleScreenTitle: "Règlement intérieur",
-    ruleCheckinFrom: "Arrivée à partir de",
-    ruleCheckoutBy: "Départ avant",
-    rule1: "Il est strictement interdit de fumer à l'intérieur.",
-    rule2: "Merci de trier correctement les déchets (informations sur les poubelles dans la cuisine).",
-    rule3: "Merci de respecter les heures de silence (22h00 - 8h00), nous sommes en milieu rural.",
-    rule4: "Il est interdit d'organiser des fêtes ou événements.",
+    regoleChooserSub: "Sélectionnez votre trullo pour consulter le règlement intérieur.",
+    regoleIncantoTitle: "Trullo Incanto",
+    regoleIncantoDesc: "Règlement intérieur et infos pratiques",
+    regoleNidoTitle: "Trullo Il Nido",
+    regoleNidoDesc: "Règlement intérieur et infos pratiques",
+
+    ruleIncantoScreenTitle: "Règlement — Trullo Incanto",
+    ruleNidoScreenTitle: "Règlement — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "Règles générales",
+    ruleSectionPraticheTitle: "Notes pratiques",
+    ruleSectionTvTitle: "Chaînes satellite et numériques",
+
+    ruleIncantoGeneraleHtml: `
+      <li>Il est interdit de fumer à l'intérieur de la maison.</li>
+      <li>L'eau du robinet n'est pas potable.</li>
+      <li>N'utilisez pas d'alcool pour allumer le barbecue.</li>
+      <li>Les enfants doivent toujours être accompagnés d'un adulte dans l'espace de jeux.</li>
+      <li class="muted">En cas de dommage de toute nature à l'appartement ou au mobilier, l'hôte est tenu d'en informer les propriétaires, qui se réservent le droit de demander le montant des dommages.</li>
+      <li class="muted">Les propriétaires déclinent toute responsabilité en cas de blessure d'adultes ou de mineurs, de perte, vol ou détérioration d'objets appartenant aux hôtes, ainsi qu'en cas de dommage ou vol concernant les véhicules garés sur le parking.</li>
+      <li class="muted">Une attention particulière doit être portée aux clés de la maison et à la télécommande du portail : en cas de perte ou de détérioration, les frais de remplacement de la serrure de la porte d'entrée et/ou de la télécommande seront à la charge de l'hôte.</li>
+    `,
+    ruleIncantoPraticheHtml: `
+      <li>Le linge de bain propre se trouve dans les tiroirs des chambres.</li>
+      <li>Les lumières de l'allée, de la cour et du jardin s'allument et s'éteignent automatiquement ; celles de la porte d'entrée et des fenêtres se commandent par interrupteur.</li>
+      <li>En cas de coupure de courant, débloquez manuellement le portail avec la clé prévue à cet effet.</li>
+      <li>Fermez les fenêtres extérieures chaque fois que vous quittez le trullo.</li>
+      <li>Fermez le hublot de la chambre en cas de pluie annoncée.</li>
+      <li>Fermez le gazebo en cas de vent fort.</li>
+      <li>Le soir, repliez les chaises longues (pour éviter que les chats n'y montent) ; en cas de pluie, rentrez-les dans la maison.</li>
+      <li><strong>Chauffage au bois</strong> : maintenez l'afficheur entre 60° et 70°, sans jamais dépasser 80°. Ne laissez pas trop de cendres dans la cheminée — retirez-les tous les 2-3 jours dans le seau prévu à cet effet.</li>
+    `,
+    ruleIncantoTvHtml: `
+      <li><strong>Chaînes satellite</strong> — Allumez la télévision, appuyez sur "LIST" sur la télécommande, puis sur la touche rouge. Sur la télévision, sélectionnez "Satellite" avec la flèche ▼, appuyez sur "OK" sur la télécommande, puis à nouveau sur "OK" avec la flèche ▼ sur la télévision, et confirmez avec "OK".</li>
+      <li><strong>Chaînes numériques italiennes</strong> — Allumez la télévision, appuyez sur "LIST" sur la télécommande, puis sur la touche rouge. Sur la télévision, sélectionnez "Antenna" avec la flèche ▲, appuyez sur "OK" sur la télécommande, puis à nouveau sur "OK" avec la flèche ▼ sur la télévision, et confirmez avec "OK".</li>
+    `,
+
+    ruleNidoGeneraleHtml: `
+      <li>Il est interdit de fumer à l'intérieur de la maison.</li>
+      <li>L'eau du robinet n'est pas potable.</li>
+      <li>N'utilisez pas d'alcool pour allumer le barbecue.</li>
+      <li>Les enfants doivent toujours être accompagnés d'un adulte dans l'espace de jeux.</li>
+      <li class="muted">En cas de dommage de toute nature à l'appartement ou au mobilier, l'hôte est tenu d'en informer les propriétaires, qui se réservent le droit de demander le montant des dommages.</li>
+      <li class="muted">Les propriétaires déclinent toute responsabilité en cas de blessure d'adultes ou de mineurs, de perte, vol ou détérioration d'objets appartenant aux hôtes, ainsi qu'en cas de dommage ou vol concernant les véhicules garés sur le parking.</li>
+      <li class="muted">Une attention particulière doit être portée aux clés de la maison et à la télécommande du portail : en cas de perte ou de détérioration, les frais de remplacement de la serrure de la porte d'entrée et/ou de la télécommande seront à la charge de l'hôte.</li>
+    `,
+    ruleNidoPraticheHtml: `
+      <li>Le linge de bain propre se trouve dans les tiroirs de la chambre.</li>
+      <li>Les lumières de l'allée, de la cour et du jardin s'allument et s'éteignent automatiquement ; celles du gazebo et de la zone barbecue se commandent par interrupteur.</li>
+      <li>En cas de coupure de courant, débloquez manuellement le portail avec la clé prévue à cet effet.</li>
+      <li>Le soir, repliez les chaises longues (pour éviter que les chats n'y montent) ; en cas de pluie, rangez-les sous le gazebo.</li>
+    `,
+    ruleNidoTvHtml: `
+      <li><strong>Chaînes satellite</strong> — Allumez la télévision, appuyez sur "LIST" sur la télécommande, puis sur la touche rouge. Sur la télévision, sélectionnez "Satellite" avec la flèche ▼, appuyez sur "OK" sur la télécommande, puis "EXIT".</li>
+      <li><strong>Chaînes numériques italiennes</strong> — Allumez la télévision, appuyez sur "LIST" sur la télécommande, puis sur la touche rouge. Sur la télévision, sélectionnez "Antenna" avec la flèche ▲, appuyez sur "OK" sur la télécommande, puis "EXIT".</li>
+    `,
 
     faqScreenTitle: "FAQ",
     faqQ1: "Fournissez-vous les draps et les serviettes ?",
     faqA1: "Oui, nous fournissons du linge propre et un jeu de serviettes pour chaque hôte.",
     faqQ2: "La cuisine est-elle équipée ?",
     faqA2: "Bien sûr. Vous y trouverez casseroles, poêles, vaisselle et couverts.",
-    faqQ3: "À quelle distance se trouve la mer ?",
-    faqA3: "Les plages les plus proches (Savelletri) sont à environ 13 km, 15-20 minutes en voiture.",
-    faqQ4: "À quelle distance se trouve le centre de Locorotondo ?",
-    faqA4: "Le centre de Locorotondo est à environ 4 km, 10 minutes en voiture.",
 
     guidaScreenTitle: "Guide des environs",
     guidaSub: "De la Valle d'Itria à la mer : les lieux que nous recommandons à nos hôtes.",

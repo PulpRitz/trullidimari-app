@@ -22,14 +22,9 @@ const APP_DATA = {
     checkOutTime: '10:30',
   },
 
-  // Testi tradotti in translations.js (chiavi rule1..rule4) — qui solo emoji + ordine.
-  houseRules: [
-    { emoji: '🚭', textKey: 'rule1' },
-    { emoji: '♻️', textKey: 'rule2' },
-    { emoji: '🤫', textKey: 'rule3' },
-    { emoji: '🎉', textKey: 'rule4' },
-    // TODO CONTENUTO: confermare/integrare regole reali (animali ammessi?, parcheggio, piscina/area giochi, ecc.)
-  ],
+  // Regole della Casa: contenuto reale (due trulli, testi completi) vive
+  // direttamente in translations.js come blocchi HTML per lingua — vedi
+  // ruleIncanto*/ruleNido* in index.html (screen-regole-incanto/-nido).
 
   // Tassa di soggiorno: sezione predisposta ma NON mostrata per ora (decisione
   // 2026-08-26). Quando ci saranno importo e link di pagamento reali (Satispay
@@ -50,12 +45,10 @@ const APP_DATA = {
     instructions: 'Inquadra il QR Code appeso in casa con la fotocamera qui sotto per copiare in automatico la password.',
   },
 
-  // Testi tradotti in translations.js (chiavi faqQ1/faqA1..faqQ4/faqA4).
+  // Testi tradotti in translations.js (chiavi faqQ1/faqA1, faqQ2/faqA2).
   faq: [
     { qKey: 'faqQ1', aKey: 'faqA1' },
     { qKey: 'faqQ2', aKey: 'faqA2' },
-    { qKey: 'faqQ3', aKey: 'faqA3' },
-    { qKey: 'faqQ4', aKey: 'faqA4' },
     // TODO CONTENUTO: aggiungere altre FAQ reali (parcheggio, animali, orari, ecc.) da confermare col proprietario
   ],
 
