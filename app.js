@@ -130,6 +130,29 @@
   window.addEventListener('scrollend', showNavs, { passive: true });
 
   /* ------------------------------------------------------------------------
+     1c. Ancoraggio alla viewport visibile reale (visualViewport). Su Chrome
+         Android, più si scrolla più la barra degli indirizzi si nasconde e
+         riappare — durante quelle transizioni "position: fixed" da solo può
+         restare ancorato alla viewport "di layout" invece che a quella
+         davvero visibile, facendo apparire la barra fuori posto. Successo
+         solo su Check-in perché è l'unica pagina abbastanza lunga da
+         scrollare quanto basta da innescare più volte quel comportamento
+         della barra degli indirizzi — non è un problema di codice diverso
+         tra le pagine (è identico ovunque), è la quantità di scroll.
+     ------------------------------------------------------------------------ */
+  if (window.visualViewport) {
+    const syncNavToVisualViewport = () => {
+      const nav = document.getElementById('bottomNav');
+      const vv = window.visualViewport;
+      const offsetBottom = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
+      nav.style.bottom = `calc(${offsetBottom}px + 14px + var(--sab))`;
+    };
+    window.visualViewport.addEventListener('resize', syncNavToVisualViewport);
+    window.visualViewport.addEventListener('scroll', syncNavToVisualViewport);
+    syncNavToVisualViewport();
+  }
+
+  /* ------------------------------------------------------------------------
      2. Home — righe elenco + codici + WhatsApp
      ------------------------------------------------------------------------ */
   function renderHomeList() {
