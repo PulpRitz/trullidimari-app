@@ -70,6 +70,12 @@
 
     const nav = document.getElementById('bottomNav');
     nav.style.display = screenId === 'checkin-success' ? 'none' : 'flex';
+    // Bug reale osservato su dispositivo: se l'utente scrolla sulla schermata
+    // precedente, il tab bar resta con la classe "nascosto" attaccata anche
+    // dopo aver cambiato schermata (si toglie solo al prossimo scroll+stop,
+    // quindi sembrava sparire a caso). Ogni cambio schermata riparte pulito.
+    nav.classList.remove('nav-hidden');
+    clearTimeout(scrollHideTimer);
     renderBottomNav(SCREEN_TO_TAB[screenId] || '');
   }
 
