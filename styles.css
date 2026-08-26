@@ -68,6 +68,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Android Chrome (76+) ignora "maximum-scale"/"user-scalable=no" nel meta
+   viewport per accessibilità — il pinch-zoom resta attivo comunque e lascia
+   l'utente pannare la pagina zoomata, facendo "sforare" tutto (modal incluso)
+   anche se il layout in sé è corretto. touch-action è rispettato davvero:
+   disabilita pinch-zoom e doppio-tap-zoom, lascia scroll verticale normale. */
+html, body { touch-action: manipulation; }
+
 img { max-width: 100%; display: block; }
 button { font-family: inherit; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
