@@ -11,6 +11,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Check-in Online",
     navCheckinDesc: "Completa la registrazione prima dell'arrivo.",
+    navRegoleTitle: "Regole della Casa",
+    navRegoleDesc: "Orari, regole e info utili per il soggiorno.",
     navWifiTitle: "WiFi",
     navWifiDesc: "Inquadra il QR e connettiti in automatico.",
     navFaqTitle: "FAQ",
@@ -19,8 +21,9 @@ const TRANSLATIONS = {
     navGuidaDesc: "Borghi, mare ed escursioni consigliate.",
     navDuePassiTitle: "Tutto a Due Passi",
     navDuePassiDesc: "Panificio, ristorante e servizi vicini.",
+    navDoveSiamoTitle: "Dove Siamo",
+    navDoveSiamoDesc: "Indirizzo, mappa e come raggiungerci.",
 
-    tabHome: "Home", tabRegole: "Regole", tabGuida: "Guida", tabVicino: "Vicino", tabContatti: "Contatti",
     emptySection: "Contenuto in arrivo — il proprietario sta completando questa sezione.",
     installBannerTitle: "Installa l'app",
     installBannerDesc: "Aggiungila alla schermata Home per aprirla come un'app vera.",
@@ -110,7 +113,7 @@ const TRANSLATIONS = {
     duepassiScreenTitle: "Tutto a Due Passi",
     duepassiSub: "Panificio, servizi, ristorante e centro commerciale a due passi dal trullo.",
 
-    contattiScreenTitle: "Contatti",
+    contattiScreenTitle: "Dove Siamo",
     addressLabel: "Indirizzo",
     btnOpenMap: "Apri Mappa",
     carNorthLabel: "In auto (da Nord)",
@@ -178,6 +181,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Online Check-in",
     navCheckinDesc: "Complete your registration before arrival.",
+    navRegoleTitle: "House Rules",
+    navRegoleDesc: "Check-in/out times, rules and useful info.",
     navWifiTitle: "WiFi",
     navWifiDesc: "Scan the QR code to connect automatically.",
     navFaqTitle: "FAQ",
@@ -186,8 +191,9 @@ const TRANSLATIONS = {
     navGuidaDesc: "Villages, coast and excursions we recommend.",
     navDuePassiTitle: "Just Around the Corner",
     navDuePassiDesc: "Bakery, restaurant and services nearby.",
+    navDoveSiamoTitle: "Where We Are",
+    navDoveSiamoDesc: "Address, map and how to reach us.",
 
-    tabHome: "Home", tabRegole: "Rules", tabGuida: "Guide", tabVicino: "Nearby", tabContatti: "Contact",
     emptySection: "Content coming soon — the owner is completing this section.",
     installBannerTitle: "Install the app",
     installBannerDesc: "Add it to your Home Screen to open it like a real app.",
@@ -277,7 +283,7 @@ const TRANSLATIONS = {
     duepassiScreenTitle: "Just Around the Corner",
     duepassiSub: "Bakery, services, restaurant and shopping centre just steps from the trullo.",
 
-    contattiScreenTitle: "Contact",
+    contattiScreenTitle: "Where We Are",
     addressLabel: "Address",
     btnOpenMap: "Open Map",
     carNorthLabel: "By car (from the North)",
@@ -345,6 +351,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Online Check-in",
     navCheckinDesc: "Schließen Sie die Anmeldung vor der Ankunft ab.",
+    navRegoleTitle: "Hausordnung",
+    navRegoleDesc: "Check-in/out-Zeiten, Regeln und nützliche Infos.",
     navWifiTitle: "WLAN",
     navWifiDesc: "QR-Code scannen und automatisch verbinden.",
     navFaqTitle: "FAQ",
@@ -353,8 +361,9 @@ const TRANSLATIONS = {
     navGuidaDesc: "Dörfer, Küste und empfohlene Ausflüge.",
     navDuePassiTitle: "Gleich um die Ecke",
     navDuePassiDesc: "Bäckerei, Restaurant und Geschäfte in der Nähe.",
+    navDoveSiamoTitle: "Wo wir sind",
+    navDoveSiamoDesc: "Adresse, Karte und Anfahrt.",
 
-    tabHome: "Home", tabRegole: "Regeln", tabGuida: "Führer", tabVicino: "In der Nähe", tabContatti: "Kontakt",
     emptySection: "Inhalt folgt in Kürze — der Eigentümer vervollständigt diesen Bereich.",
     installBannerTitle: "App installieren",
     installBannerDesc: "Zum Home-Bildschirm hinzufügen, um sie wie eine echte App zu öffnen.",
@@ -444,7 +453,7 @@ const TRANSLATIONS = {
     duepassiScreenTitle: "Gleich um die Ecke",
     duepassiSub: "Bäckerei, Geschäfte, Restaurant und Einkaufszentrum nur wenige Schritte vom Trullo entfernt.",
 
-    contattiScreenTitle: "Kontakt",
+    contattiScreenTitle: "Wo wir sind",
     addressLabel: "Adresse",
     btnOpenMap: "Karte öffnen",
     carNorthLabel: "Mit dem Auto (von Norden)",
@@ -512,6 +521,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Check-in en ligne",
     navCheckinDesc: "Complétez votre enregistrement avant l'arrivée.",
+    navRegoleTitle: "Règlement Intérieur",
+    navRegoleDesc: "Horaires, règles et infos utiles pour le séjour.",
     navWifiTitle: "WiFi",
     navWifiDesc: "Scannez le QR code pour vous connecter automatiquement.",
     navFaqTitle: "FAQ",
@@ -520,8 +531,9 @@ const TRANSLATIONS = {
     navGuidaDesc: "Villages, mer et excursions que nous recommandons.",
     navDuePassiTitle: "À deux pas",
     navDuePassiDesc: "Boulangerie, restaurant et commerces à proximité.",
+    navDoveSiamoTitle: "Où Nous Sommes",
+    navDoveSiamoDesc: "Adresse, carte et comment nous rejoindre.",
 
-    tabHome: "Accueil", tabRegole: "Règles", tabGuida: "Guide", tabVicino: "À proximité", tabContatti: "Contact",
     emptySection: "Contenu à venir — le propriétaire complète cette section.",
     installBannerTitle: "Installer l'application",
     installBannerDesc: "Ajoutez-la à l'écran d'accueil pour l'ouvrir comme une vraie application.",
@@ -611,7 +623,7 @@ const TRANSLATIONS = {
     duepassiScreenTitle: "À deux pas",
     duepassiSub: "Boulangerie, commerces, restaurant et centre commercial à deux pas du trullo.",
 
-    contattiScreenTitle: "Contact",
+    contattiScreenTitle: "Où Nous Sommes",
     addressLabel: "Adresse",
     btnOpenMap: "Ouvrir la carte",
     carNorthLabel: "En voiture (depuis le Nord)",

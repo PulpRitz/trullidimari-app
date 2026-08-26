@@ -9,22 +9,17 @@
   /* ------------------------------------------------------------------------
      0. Navigazione a schermate (SPA semplice, nessun router esterno)
      ------------------------------------------------------------------------ */
-  // Righe elenco in Home (scorciatoie, non hanno una tab propria in basso)
+  // Righe elenco in Home — unico punto di navigazione dell'app (niente più
+  // tab bar in basso: causava bug di posizionamento non risolvibili in modo
+  // affidabile su Chrome Android sulle pagine lunghe, vedi cronologia commit).
   const HOME_ROWS = [
     { id: 'checkin', labelKey: 'navCheckinTitle', descKey: 'navCheckinDesc', icon: iconKey },
+    { id: 'regole', labelKey: 'navRegoleTitle', descKey: 'navRegoleDesc', icon: iconClipboard },
     { id: 'wifi', labelKey: 'navWifiTitle', descKey: 'navWifiDesc', icon: iconWifi },
     { id: 'faq', labelKey: 'navFaqTitle', descKey: 'navFaqDesc', icon: iconQuestion },
     { id: 'guida', labelKey: 'navGuidaTitle', descKey: 'navGuidaDesc', icon: iconMap },
     { id: 'duepassi', labelKey: 'navDuePassiTitle', descKey: 'navDuePassiDesc', icon: iconBag },
-  ];
-
-  // Tab bar fissa in basso, presente su tutte le schermate principali
-  const TAB_ITEMS = [
-    { id: 'home', labelKey: 'tabHome', icon: iconHome },
-    { id: 'regole', labelKey: 'tabRegole', icon: iconClipboard },
-    { id: 'guida', labelKey: 'tabGuida', icon: iconMap },
-    { id: 'duepassi', labelKey: 'tabVicino', icon: iconBag },
-    { id: 'contatti', labelKey: 'tabContatti', icon: iconChat },
+    { id: 'contatti', labelKey: 'navDoveSiamoTitle', descKey: 'navDoveSiamoDesc', icon: iconPin },
   ];
 
   /* ------------------------------------------------------------------------
@@ -55,102 +50,18 @@
     });
   }
 
-  // Quale tab in basso risulta attiva per ciascuna schermata (le schermate
-  // raggiunte da riga home — checkin/wifi/faq — non hanno una tab propria).
-  const SCREEN_TO_TAB = {
-    home: 'home', regole: 'regole', guida: 'guida', duepassi: 'duepassi', contatti: 'contatti',
-  };
-
   function goTo(screenId) {
     document.querySelectorAll('.screen').forEach((s) => s.classList.remove('active'));
     const target = document.getElementById('screen-' + screenId);
     if (target) target.classList.add('active');
     window.scrollTo(0, 0);
     if (screenId !== 'wifi') stopWifiScan();
-
-    const nav = document.getElementById('bottomNav');
-    nav.style.display = screenId === 'checkin-success' ? 'none' : 'flex';
-    // Bug reale osservato su dispositivo: se l'utente scrolla sulla schermata
-    // precedente, il tab bar resta con la classe "nascosto" attaccata anche
-    // dopo aver cambiato schermata (si toglie solo al prossimo scroll+stop,
-    // quindi sembrava sparire a caso). Ogni cambio schermata riparte pulito.
-    nav.classList.remove('nav-hidden');
-    clearTimeout(scrollHideTimer);
-    renderBottomNav(SCREEN_TO_TAB[screenId] || '');
   }
 
   document.addEventListener('click', (e) => {
     const navEl = e.target.closest('[data-nav]');
     if (navEl) goTo(navEl.dataset.nav);
   });
-
-  /* ------------------------------------------------------------------------
-     1. Tab bar in basso — un solo elemento, fuori da ogni .screen (vedi
-        commento in index.html sul perché non può stare dentro una .screen)
-     ------------------------------------------------------------------------ */
-  function renderBottomNav(activeTabId) {
-    const el = document.getElementById('bottomNav');
-    el.innerHTML = TAB_ITEMS.map((tab) => `
-      <button class="tab-btn ${tab.id === activeTabId ? 'active' : ''}" data-nav="${tab.id}">
-        ${tab.icon()}
-        <span>${t(tab.labelKey)}</span>
-      </button>
-    `).join('');
-  }
-
-  /* ------------------------------------------------------------------------
-     1b. Tab bar: si nasconde durante lo scroll, riappare quando ci si ferma
-         davvero. Doppio meccanismo, sempre entrambi attivi:
-         - "scrollend" (quando il browser lo supporta) è il segnale più
-           preciso, indipendente da quanti eventi "scroll" arrivano.
-         - un timer di sicurezza parte comunque ad ogni evento "scroll" e
-           fa riapparire la barra da solo se "scrollend" non dovesse
-           scattare. Osservato su Chrome Android: "scrollend" a volte non
-           arriva per lo scroll verso l'alto (bug del browser, non nostro) —
-           senza questo timer la barra restava nascosta per sempre in quel
-           caso. Chiunque scatti per primo vince, l'altro viene ignorato.
-     ------------------------------------------------------------------------ */
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let scrollHideTimer = null;
-
-  function hideNavs() {
-    document.querySelectorAll('.bottom-nav').forEach((nav) => nav.classList.add('nav-hidden'));
-  }
-  function showNavs() {
-    clearTimeout(scrollHideTimer);
-    document.querySelectorAll('.bottom-nav').forEach((nav) => nav.classList.remove('nav-hidden'));
-  }
-
-  window.addEventListener('scroll', () => {
-    hideNavs();
-    clearTimeout(scrollHideTimer);
-    scrollHideTimer = setTimeout(showNavs, reduceMotion ? 0 : 500);
-  }, { passive: true });
-
-  window.addEventListener('scrollend', showNavs, { passive: true });
-
-  /* ------------------------------------------------------------------------
-     1c. Ancoraggio alla viewport visibile reale (visualViewport). Su Chrome
-         Android, più si scrolla più la barra degli indirizzi si nasconde e
-         riappare — durante quelle transizioni "position: fixed" da solo può
-         restare ancorato alla viewport "di layout" invece che a quella
-         davvero visibile, facendo apparire la barra fuori posto. Successo
-         solo su Check-in perché è l'unica pagina abbastanza lunga da
-         scrollare quanto basta da innescare più volte quel comportamento
-         della barra degli indirizzi — non è un problema di codice diverso
-         tra le pagine (è identico ovunque), è la quantità di scroll.
-     ------------------------------------------------------------------------ */
-  if (window.visualViewport) {
-    const syncNavToVisualViewport = () => {
-      const nav = document.getElementById('bottomNav');
-      const vv = window.visualViewport;
-      const offsetBottom = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
-      nav.style.bottom = `calc(${offsetBottom}px + 14px + var(--sab))`;
-    };
-    window.visualViewport.addEventListener('resize', syncNavToVisualViewport);
-    window.visualViewport.addEventListener('scroll', syncNavToVisualViewport);
-    syncNavToVisualViewport();
-  }
 
   /* ------------------------------------------------------------------------
      2. Home — righe elenco + codici + WhatsApp
@@ -721,8 +632,7 @@
   function iconQuestion() { return svg('<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.4 2.3c-.9.4-1.4 1-1.4 2"/><circle cx="12" cy="17" r=".1" fill="currentColor"/>'); }
   function iconMap() { return svg('<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>'); }
   function iconBag() { return svg('<path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>'); }
-  function iconHome() { return svg('<path d="M3 11l9-8 9 8M5 10v10h14V10"/>'); }
-  function iconChat() { return svg('<path d="M21 11.5a8.4 8.4 0 0 1-8.8 8.4 8.9 8.9 0 0 1-3.9-.9L3 21l1.9-5A8.4 8.4 0 1 1 21 11.5z"/>'); }
+  function iconPin() { return svg('<path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/>'); }
 
   /* ------------------------------------------------------------------------
      10. Init
@@ -738,10 +648,6 @@
     renderLocationLists();
     renderWifi();
     renderPrivacyModal();
-    // Il cambio lingua è raggiungibile solo dalla Home (vedi selettore
-    // disabilitato altrove), quindi qui la tab attiva è sempre "home".
-    renderBottomNav('home');
-    document.getElementById('bottomNav').style.display = 'flex';
   }
 
   // Cambio lingua: disponibile solo dal selettore in Home (le altre schermate

@@ -79,7 +79,7 @@ a { color: inherit; text-decoration: none; }
   display: none;
   flex: 1;
   flex-direction: column;
-  padding: calc(20px + var(--sat)) 20px calc(84px + var(--sab));
+  padding: calc(20px + var(--sat)) 20px calc(28px + var(--sab));
   animation: fadeIn var(--transition-normal);
 }
 .screen.active { display: flex; }
@@ -341,56 +341,6 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow-sm);
 }
 
-/* --------------------------------------------------------------------------
-   Bottom tab bar
-   -------------------------------------------------------------------------- */
-.bottom-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: calc(14px + var(--sab));
-  margin-inline: auto;
-  /* Centraggio via left/right/margin, MAI via transform: su alcuni Android
-     lo show/hide (che usa transform per lo spostamento verticale) può
-     interrompersi a metà e "perdere" un eventuale translateX(-50%) usato
-     per centrare, facendo apparire la barra spostata a destra. */
-  width: min(calc(480px - 32px), calc(100vw - 32px));
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: var(--bg-surface);
-  border-radius: var(--radius-pill);
-  padding: 10px 4px;
-  box-shadow: var(--shadow-lg);
-  z-index: 20;
-  transform: translateY(0);
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.bottom-nav.nav-hidden {
-  transform: translateY(140%);
-  opacity: 0;
-}
-@media (prefers-reduced-motion: reduce) {
-  .bottom-nav { transition: none; }
-}
-.bottom-nav .tab-btn {
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 4px 6px;
-  color: var(--text-muted);
-  min-width: 0;
-}
-.bottom-nav .tab-btn svg { width: 19px; height: 19px; flex: 0 0 auto; }
-.bottom-nav .tab-btn span {
-  font-size: 0.6rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.bottom-nav .tab-btn.active { color: var(--color-terracotta); }
 
 /* --------------------------------------------------------------------------
    Bottoni comuni
