@@ -305,7 +305,7 @@
         <button class="btn-back" data-nav="home" aria-label="Torna alla Home">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
         </button>
-        <h2 class="screen-title">🥖 <span data-i18n="duepassiScreenTitle">Tutto a Due Passi</span></h2>
+        <h2 class="screen-title">🚶 <span data-i18n="duepassiScreenTitle">Tutto a Due Passi</span></h2>
       </div>
       <select class="lang-select" disabled><option>🇮🇹</option></select>
     </div>
@@ -400,6 +400,34 @@
       </div>
     </div>
   </div>
+
+  <!-- ======================== TAB BAR FLOTTANTE ===========================
+       Presente su tutte le schermate. Si nasconde durante lo scroll (in
+       qualunque direzione) e riappare quando lo scroll si ferma — vedi
+       app.js. Il bug della vecchia tab bar docked era overscroll-behavior-y
+       su body (già fissato), non la barra in sé. -->
+  <nav class="tab-bar-float" id="tabBar">
+    <button class="tab-bar-btn" data-nav="home">
+      <span class="tab-bar-icon" id="tabIconHome"></span>
+      <span data-i18n="tabHome">Home</span>
+    </button>
+    <button class="tab-bar-btn" data-nav="regole">
+      <span class="tab-bar-icon" id="tabIconRegole"></span>
+      <span data-i18n="tabRegole">Regole</span>
+    </button>
+    <button class="tab-bar-btn" data-nav="guida">
+      <span class="tab-bar-icon" id="tabIconGuida"></span>
+      <span data-i18n="tabGuida">Guida</span>
+    </button>
+    <button class="tab-bar-btn" data-nav="duepassi">
+      <span class="tab-bar-icon" id="tabIconVicino"></span>
+      <span data-i18n="tabVicino">Vicino</span>
+    </button>
+    <button class="tab-bar-btn" data-nav="contatti">
+      <span class="tab-bar-icon" id="tabIconDoveSiamo"></span>
+      <span data-i18n="tabDoveSiamo">Dove Siamo</span>
+    </button>
+  </nav>
 
 </div>
 

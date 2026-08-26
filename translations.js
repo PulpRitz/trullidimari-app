@@ -24,6 +24,12 @@ const TRANSLATIONS = {
     navDoveSiamoTitle: "Dove Siamo",
     navDoveSiamoDesc: "Indirizzo, mappa e come raggiungerci.",
 
+    tabHome: "Home",
+    tabRegole: "Regole",
+    tabGuida: "Guida",
+    tabVicino: "Vicino",
+    tabDoveSiamo: "Dove Siamo",
+
     emptySection: "Contenuto in arrivo — il proprietario sta completando questa sezione.",
     installBannerTitle: "Installa l'app",
     installBannerDesc: "Aggiungila alla schermata Home per aprirla come un'app vera.",
@@ -238,6 +244,12 @@ const TRANSLATIONS = {
     navDuePassiDesc: "Bakery, restaurant and services nearby.",
     navDoveSiamoTitle: "Where We Are",
     navDoveSiamoDesc: "Address, map and how to reach us.",
+
+    tabHome: "Home",
+    tabRegole: "Rules",
+    tabGuida: "Guide",
+    tabVicino: "Nearby",
+    tabDoveSiamo: "Where We Are",
 
 
     emptySection: "Content coming soon — the owner is completing this section.",
@@ -455,6 +467,12 @@ const TRANSLATIONS = {
     navDoveSiamoTitle: "Wo wir sind",
     navDoveSiamoDesc: "Adresse, Karte und Anfahrt.",
 
+    tabHome: "Home",
+    tabRegole: "Regeln",
+    tabGuida: "Führer",
+    tabVicino: "In der Nähe",
+    tabDoveSiamo: "Wo wir sind",
+
 
     emptySection: "Inhalt folgt in Kürze — der Eigentümer vervollständigt diesen Bereich.",
     installBannerTitle: "App installieren",
@@ -670,6 +688,12 @@ const TRANSLATIONS = {
     navDuePassiDesc: "Boulangerie, restaurant et commerces à proximité.",
     navDoveSiamoTitle: "Où Nous Sommes",
     navDoveSiamoDesc: "Adresse, carte et comment nous rejoindre.",
+
+    tabHome: "Accueil",
+    tabRegole: "Règles",
+    tabGuida: "Guide",
+    tabVicino: "À Proximité",
+    tabDoveSiamo: "Où Sommes-Nous",
 
 
     emptySection: "Contenu à venir — le propriétaire complète cette section.",

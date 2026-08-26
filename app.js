@@ -50,18 +50,35 @@
     });
   }
 
+  function updateTabBarActive(screenId) {
+    document.querySelectorAll('#tabBar [data-nav]').forEach((b) => {
+      b.classList.toggle('active', b.dataset.nav === screenId);
+    });
+  }
+
   function goTo(screenId) {
     document.querySelectorAll('.screen').forEach((s) => s.classList.remove('active'));
     const target = document.getElementById('screen-' + screenId);
     if (target) target.classList.add('active');
     window.scrollTo(0, 0);
     if (screenId !== 'wifi') stopWifiScan();
+    updateTabBarActive(screenId);
   }
 
   document.addEventListener('click', (e) => {
     const navEl = e.target.closest('[data-nav]');
     if (navEl) goTo(navEl.dataset.nav);
   });
+
+  // Tab bar flottante: sparisce appena inizia uno scroll (su o giù), riappare
+  // quando lo scroll si ferma (nessun evento "scroll" per ~500ms).
+  let tabBarIdleTimer = null;
+  window.addEventListener('scroll', () => {
+    const bar = document.getElementById('tabBar');
+    bar.classList.add('hidden');
+    clearTimeout(tabBarIdleTimer);
+    tabBarIdleTimer = setTimeout(() => bar.classList.remove('hidden'), 500);
+  }, { passive: true });
 
   /* ------------------------------------------------------------------------
      2. Home — righe elenco + codici + WhatsApp
@@ -625,6 +642,15 @@
   function iconMap() { return svg('<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>'); }
   function iconBag() { return svg('<path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>'); }
   function iconPin() { return svg('<path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/>'); }
+  function iconHome() { return svg('<path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9h4.5v-5h2v5h4.5v-9"/>'); }
+
+  function renderTabBarIcons() {
+    document.getElementById('tabIconHome').innerHTML = iconHome();
+    document.getElementById('tabIconRegole').innerHTML = iconClipboard();
+    document.getElementById('tabIconGuida').innerHTML = iconMap();
+    document.getElementById('tabIconVicino').innerHTML = iconBag();
+    document.getElementById('tabIconDoveSiamo').innerHTML = iconPin();
+  }
 
   /* ------------------------------------------------------------------------
      10. Init
@@ -640,6 +666,7 @@
     renderLocationLists();
     renderWifi();
     renderPrivacyModal();
+    renderTabBarIcons();
   }
 
   // Cambio lingua: disponibile solo dal selettore in Home (le altre schermate
@@ -656,6 +683,7 @@
     document.getElementById('langSelect').value = currentLang;
     renderEverything();
     resetCheckinForm();
+    updateTabBarActive('home'); // la Home parte già attiva via markup, goTo() non viene chiamato al load
 
     // Al ritorno da FormSubmit (redirect _next dopo un invio riuscito con
     // allegati) mostriamo la schermata di successo e ripuliamo l'URL.
