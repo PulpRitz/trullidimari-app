@@ -700,6 +700,16 @@
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js').catch(() => {});
+      // Quando un nuovo service worker prende il controllo (dopo un deploy),
+      // ricarica la pagina già aperta in automatico — altrimenti su Android
+      // una PWA lasciata aperta in background continua a girare col
+      // JS/CSS vecchio finché non viene chiusa e riaperta a mano.
+      let swRefreshed = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (swRefreshed) return;
+        swRefreshed = true;
+        window.location.reload();
+      });
     }
   }
 
