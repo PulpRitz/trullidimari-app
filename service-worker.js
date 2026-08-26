@@ -1,7 +1,7 @@
 /* Cache shell minima: app-guscio disponibile anche con connessione debole/assente.
    Il check-in (upload foto + invio) richiede comunque rete al momento dell'invio. */
 
-const CACHE_NAME = 'trullidimari-app-v27';
+const CACHE_NAME = 'trullidimari-app-v28';
 const SHELL_FILES = [
   './',
   './index.html',

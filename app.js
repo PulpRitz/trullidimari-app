@@ -50,21 +50,13 @@
     });
   }
 
-  // Nessuna schermata la nasconde più (anche su Check-in resta, con le
-  // stesse regole di scroll delle altre pagine).
-  const TAB_BAR_HIDDEN_SCREENS = [];
-
-  // Alcuni Android/Chrome, se il contenuto sfora anche per un istante (es.
-  // apertura select nativo tipo "Data Nascita"), "ricordano" lo scroll
-  // orizzontale del layout viewport anche dopo che il contenuto è tornato
-  // normale — succede solo su Android, non su iPhone/desktop. Rete di
-  // sicurezza: la app non ha mai bisogno di scroll orizzontale, quindi lo
-  // riportiamo a 0 ogni volta che si sposta.
-  function lockHorizontalScroll() {
-    if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
-  }
-  window.addEventListener('scroll', lockHorizontalScroll, { passive: true });
-  window.addEventListener('resize', lockHorizontalScroll, { passive: true });
+  // Nascosta del tutto sul Check-in: l'ospite deve arrivare in fondo al form
+  // senza distrazioni (nessun link di uscita a portata di pollice). Decisione
+  // ripristinata dopo un tentativo di riattivarla — il bug di overflow
+  // orizzontale del modal privacy su Android non si è risolto nonostante
+  // vari fix (vedi storico commit), accettato come noto/minore: il link
+  // all'informativa resta cliccato raramente.
+  const TAB_BAR_HIDDEN_SCREENS = ['checkin'];
 
   function updateTabBarActive(screenId) {
     const bar = document.getElementById('tabBar');
@@ -727,53 +719,4 @@
   }
 
   document.addEventListener('DOMContentLoaded', init);
-
-  /* ------------------------------------------------------------------------
-     9. Debug overflow orizzontale — SOLO con ?debug=1 in URL, innocuo per
-        gli ospiti normali. Mostra a schermo scrollWidth vs innerWidth e il
-        primo elemento che sfora, per diagnosticare il bug Android senza
-        accesso diretto al device.
-     ------------------------------------------------------------------------ */
-  if (location.search.includes('debug=1')) {
-    function reportOverflow(label) {
-      const vw = window.innerWidth;
-      const docW = document.documentElement.scrollWidth;
-      let offender = null;
-      let offenderWidth = 0;
-      document.querySelectorAll('body *').forEach((el) => {
-        const r = el.getBoundingClientRect();
-        if (r.right > vw + 1 || r.left < -1) {
-          const overflowAmount = Math.max(r.right - vw, -r.left);
-          if (overflowAmount > offenderWidth) {
-            offenderWidth = overflowAmount;
-            offender = el;
-          }
-        }
-      });
-      let box = document.getElementById('debugOverflowBox');
-      if (!box) {
-        box = document.createElement('div');
-        box.id = 'debugOverflowBox';
-        box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#c00;color:#fff;font-size:11px;padding:6px 8px;font-family:monospace;white-space:pre-wrap;max-height:40vh;overflow:auto;';
-        document.body.appendChild(box);
-      }
-      box.textContent =
-        '[' + label + '] scrollX=' + window.scrollX +
-        ' innerWidth=' + vw + ' docScrollWidth=' + docW +
-        ' visualViewportW=' + (window.visualViewport ? window.visualViewport.width : 'n/a') +
-        ' visualViewportOffsetLeft=' + (window.visualViewport ? window.visualViewport.offsetLeft : 'n/a') +
-        (offender
-          ? '\nOFFENDER: <' + offender.tagName + ' class="' + offender.className + '" id="' + offender.id + '">' +
-            ' rect=' + JSON.stringify(offender.getBoundingClientRect())
-          : '\nnessun elemento sfora nel DOM');
-    }
-    window.addEventListener('load', () => reportOverflow('load'));
-    window.addEventListener('resize', () => reportOverflow('resize'));
-    window.addEventListener('scroll', () => reportOverflow('scroll'), { passive: true });
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('#btnOpenPrivacy')) {
-        setTimeout(() => reportOverflow('privacy-modal-open'), 200);
-      }
-    });
-  }
 })();
