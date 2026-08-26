@@ -54,6 +54,18 @@
   // stesse regole di scroll delle altre pagine).
   const TAB_BAR_HIDDEN_SCREENS = [];
 
+  // Alcuni Android/Chrome, se il contenuto sfora anche per un istante (es.
+  // apertura select nativo tipo "Data Nascita"), "ricordano" lo scroll
+  // orizzontale del layout viewport anche dopo che il contenuto è tornato
+  // normale — succede solo su Android, non su iPhone/desktop. Rete di
+  // sicurezza: la app non ha mai bisogno di scroll orizzontale, quindi lo
+  // riportiamo a 0 ogni volta che si sposta.
+  function lockHorizontalScroll() {
+    if (window.scrollX !== 0) window.scrollTo(0, window.scrollY);
+  }
+  window.addEventListener('scroll', lockHorizontalScroll, { passive: true });
+  window.addEventListener('resize', lockHorizontalScroll, { passive: true });
+
   function updateTabBarActive(screenId) {
     const bar = document.getElementById('tabBar');
     bar.style.display = TAB_BAR_HIDDEN_SCREENS.includes(screenId) ? 'none' : 'flex';
@@ -556,6 +568,7 @@
   }
 
   function openPrivacyModal() {
+    lockHorizontalScroll();
     document.getElementById('privacyModal').classList.add('open');
     document.getElementById('privacyModal').setAttribute('aria-hidden', 'false');
   }
