@@ -11,8 +11,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Check-in Online",
     navCheckinDesc: "Completa la registrazione prima dell'arrivo.",
-    navRegoleTitle: "Regole della Casa",
-    navRegoleDesc: "Orari, regole e info utili per il soggiorno.",
+    navRegoleTitle: "Info Utili",
+    navRegoleDesc: "Orari, informazioni e consigli utili per il soggiorno.",
     navWifiTitle: "WiFi",
     navWifiDesc: "Inquadra il QR e connettiti in automatico.",
     navFaqTitle: "FAQ",
@@ -25,7 +25,7 @@ const TRANSLATIONS = {
     navDoveSiamoDesc: "Indirizzo, mappa e come raggiungerci.",
 
     tabHome: "Home",
-    tabRegole: "Regole",
+    tabRegole: "Info",
     tabGuida: "Guida",
     tabVicino: "Vicino",
     tabDoveSiamo: "Dove Siamo",
@@ -96,27 +96,24 @@ const TRANSLATIONS = {
     wifiCopiedHint: "Password copiata negli appunti. Aprila dalle impostazioni WiFi del telefono e incollala.",
     btnRescan: "Scansiona di nuovo",
 
-    regoleScreenTitle: "Regole della Casa",
-    regoleChooserSub: "Seleziona il tuo trullo per consultare le regole della casa.",
+    regoleScreenTitle: "Info Utili",
+    regoleChooserSub: "Seleziona il tuo trullo per consultare le informazioni utili.",
     regoleIncantoTitle: "Trullo Incanto",
-    regoleIncantoDesc: "Regole della casa e info pratiche",
+    regoleIncantoDesc: "Informazioni utili per il soggiorno",
     regoleNidoTitle: "Trullo Il Nido",
-    regoleNidoDesc: "Regole della casa e info pratiche",
+    regoleNidoDesc: "Informazioni utili per il soggiorno",
 
-    ruleIncantoScreenTitle: "Regole — Trullo Incanto",
-    ruleNidoScreenTitle: "Regole — Trullo Il Nido",
-    ruleSectionGeneraleTitle: "Regole generali",
+    ruleIncantoScreenTitle: "Info Utili — Trullo Incanto",
+    ruleNidoScreenTitle: "Info Utili — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "Informazioni generali",
     ruleSectionPraticheTitle: "Note pratiche casa",
     ruleSectionTvTitle: "Canali satellitari e digitali",
 
     ruleIncantoGeneraleHtml: `
       <li>È vietato fumare all'interno della casa.</li>
-      <li>L'acqua dei rubinetti non è potabile.</li>
       <li>Non usare alcool per accendere il barbecue.</li>
       <li>I bambini devono essere sempre accompagnati da un adulto nell'area giochi.</li>
-      <li class="muted">In caso di danni all'appartamento o agli arredi, l'ospite è tenuto a informare i proprietari, che si riservano di richiedere l'importo dei danni.</li>
-      <li class="muted">I proprietari declinano ogni responsabilità per infortuni ad adulti e minori, per smarrimento, furto o danneggiamento di oggetti degli ospiti, e per danni o furti alle autovetture in parcheggio.</li>
-      <li class="muted">Particolare attenzione alle chiavi di casa e al telecomando del cancello: in caso di smarrimento o deterioramento, le spese di sostituzione (serratura / telecomando) sono a carico dell'ospite.</li>
+      <li>Particolare attenzione alle chiavi di casa e al telecomando del cancello: in caso di smarrimento o deterioramento, le spese di sostituzione (serratura / telecomando) sono a carico dell'ospite.</li>
     `,
     ruleIncantoPraticheHtml: `
       <li>Il cambio degli asciugamani si trova nei cassetti delle camere da letto.</li>
@@ -124,7 +121,6 @@ const TRANSLATIONS = {
       <li>In assenza di corrente elettrica, sbloccare manualmente il cancello con l'apposita chiave.</li>
       <li>Chiudere le finestre esterne ogni volta che si esce dal trullo.</li>
       <li>Chiudere la finestra oblò della camera da letto se si prevede pioggia.</li>
-      <li>Chiudere il gazebo in caso di vento forte.</li>
       <li>La sera, chiudere le sedie sdraio (per evitare che salgano i gatti); in caso di pioggia rientrarle in casa.</li>
       <li><strong>Riscaldamento a legna</strong>: mantenere il display tra 60° e 70°, non superare mai 80°. Non lasciare troppa cenere nel caminetto — rimuoverla ogni 2-3 giorni nell'apposito secchio.</li>
     `,
@@ -135,12 +131,9 @@ const TRANSLATIONS = {
 
     ruleNidoGeneraleHtml: `
       <li>È vietato fumare all'interno della casa.</li>
-      <li>L'acqua dei rubinetti non è potabile.</li>
       <li>Non usare alcool per accendere il barbecue.</li>
       <li>I bambini devono essere sempre accompagnati da un adulto nell'area giochi.</li>
-      <li class="muted">In caso di danni all'appartamento o agli arredi, l'ospite è tenuto a informare i proprietari, che si riservano di richiedere l'importo dei danni.</li>
-      <li class="muted">I proprietari declinano ogni responsabilità per infortuni ad adulti e minori, per smarrimento, furto o danneggiamento di oggetti degli ospiti, e per danni o furti alle autovetture in parcheggio.</li>
-      <li class="muted">Particolare attenzione alle chiavi di casa e al telecomando del cancello: in caso di smarrimento o deterioramento, le spese di sostituzione (serratura / telecomando) sono a carico dell'ospite.</li>
+      <li>Particolare attenzione alle chiavi di casa e al telecomando del cancello: in caso di smarrimento o deterioramento, le spese di sostituzione (serratura / telecomando) sono a carico dell'ospite.</li>
     `,
     ruleNidoPraticheHtml: `
       <li>Il cambio degli asciugamani si trova nei cassetti della camera da letto.</li>
@@ -232,8 +225,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Online Check-in",
     navCheckinDesc: "Complete your registration before arrival.",
-    navRegoleTitle: "House Rules",
-    navRegoleDesc: "Check-in/out times, rules and useful info.",
+    navRegoleTitle: "Useful Info",
+    navRegoleDesc: "Check-in/out times and useful info for your stay.",
     navWifiTitle: "WiFi",
     navWifiDesc: "Scan the QR code to connect automatically.",
     navFaqTitle: "FAQ",
@@ -246,7 +239,7 @@ const TRANSLATIONS = {
     navDoveSiamoDesc: "Address, map and how to reach us.",
 
     tabHome: "Home",
-    tabRegole: "Rules",
+    tabRegole: "Info",
     tabGuida: "Guide",
     tabVicino: "Nearby",
     tabDoveSiamo: "Where We Are",
@@ -318,27 +311,24 @@ const TRANSLATIONS = {
     wifiCopiedHint: "Password copied to clipboard. Open your phone's WiFi settings and paste it.",
     btnRescan: "Scan again",
 
-    regoleScreenTitle: "House Rules",
-    regoleChooserSub: "Select your trullo to view the house rules.",
+    regoleScreenTitle: "Useful Info",
+    regoleChooserSub: "Select your trullo to view useful information.",
     regoleIncantoTitle: "Trullo Incanto",
-    regoleIncantoDesc: "House rules and practical info",
+    regoleIncantoDesc: "Useful info for your stay",
     regoleNidoTitle: "Trullo Il Nido",
-    regoleNidoDesc: "House rules and practical info",
+    regoleNidoDesc: "Useful info for your stay",
 
-    ruleIncantoScreenTitle: "House Rules — Trullo Incanto",
-    ruleNidoScreenTitle: "House Rules — Trullo Il Nido",
-    ruleSectionGeneraleTitle: "General rules",
+    ruleIncantoScreenTitle: "Useful Info — Trullo Incanto",
+    ruleNidoScreenTitle: "Useful Info — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "General information",
     ruleSectionPraticheTitle: "Practical notes",
     ruleSectionTvTitle: "Satellite & digital channels",
 
     ruleIncantoGeneraleHtml: `
       <li>Smoking is not allowed inside the house.</li>
-      <li>Tap water is not drinkable.</li>
       <li>Do not use alcohol to light the barbecue.</li>
       <li>Children must always be accompanied by an adult in the play area.</li>
-      <li class="muted">If the guest causes any kind of damage inside the apartment or to the furnishings, they must inform the owners, who reserve the right to charge for the damage.</li>
-      <li class="muted">The owners decline all responsibility for injuries to adults and minors, for loss, theft or damage to guests' belongings, and for damage or theft affecting cars in the parking area.</li>
-      <li class="muted">Please take special care of the house keys and the gate remote control: if lost or damaged, the cost of replacing the front door lock and/or the remote control will be charged to the guest.</li>
+      <li>Please take special care of the house keys and the gate remote control: if lost or damaged, the cost of replacing the front door lock and/or the remote control will be charged to the guest.</li>
     `,
     ruleIncantoPraticheHtml: `
       <li>Fresh towels are kept in the bedroom drawers.</li>
@@ -346,7 +336,6 @@ const TRANSLATIONS = {
       <li>If there is a power outage, unlock the gate manually with the dedicated key.</li>
       <li>Close the outside windows every time you leave the trullo.</li>
       <li>Close the bedroom porthole window if rain is expected.</li>
-      <li>Close the gazebo in case of strong wind.</li>
       <li>In the evening, fold up the sun loungers (to keep the cats off them); bring them inside if it rains.</li>
       <li><strong>Wood-burning heating</strong>: keep the display between 60° and 70°, never above 80°. Don't let too much ash build up in the fireplace — remove the excess every 2-3 days into the designated bucket.</li>
     `,
@@ -357,12 +346,9 @@ const TRANSLATIONS = {
 
     ruleNidoGeneraleHtml: `
       <li>Smoking is not allowed inside the house.</li>
-      <li>Tap water is not drinkable.</li>
       <li>Do not use alcohol to light the barbecue.</li>
       <li>Children must always be accompanied by an adult in the play area.</li>
-      <li class="muted">If the guest causes any kind of damage inside the apartment or to the furnishings, they must inform the owners, who reserve the right to charge for the damage.</li>
-      <li class="muted">The owners decline all responsibility for injuries to adults and minors, for loss, theft or damage to guests' belongings, and for damage or theft affecting cars in the parking area.</li>
-      <li class="muted">Please take special care of the house keys and the gate remote control: if lost or damaged, the cost of replacing the front door lock and/or the remote control will be charged to the guest.</li>
+      <li>Please take special care of the house keys and the gate remote control: if lost or damaged, the cost of replacing the front door lock and/or the remote control will be charged to the guest.</li>
     `,
     ruleNidoPraticheHtml: `
       <li>Fresh towels are kept in the bedroom drawers.</li>
@@ -454,8 +440,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Online Check-in",
     navCheckinDesc: "Schließen Sie die Anmeldung vor der Ankunft ab.",
-    navRegoleTitle: "Hausordnung",
-    navRegoleDesc: "Check-in/out-Zeiten, Regeln und nützliche Infos.",
+    navRegoleTitle: "Nützliche Infos",
+    navRegoleDesc: "Check-in/out-Zeiten und nützliche Infos für Ihren Aufenthalt.",
     navWifiTitle: "WLAN",
     navWifiDesc: "QR-Code scannen und automatisch verbinden.",
     navFaqTitle: "FAQ",
@@ -468,7 +454,7 @@ const TRANSLATIONS = {
     navDoveSiamoDesc: "Adresse, Karte und Anfahrt.",
 
     tabHome: "Home",
-    tabRegole: "Regeln",
+    tabRegole: "Info",
     tabGuida: "Führer",
     tabVicino: "In der Nähe",
     tabDoveSiamo: "Wo wir sind",
@@ -540,27 +526,24 @@ const TRANSLATIONS = {
     wifiCopiedHint: "Passwort in die Zwischenablage kopiert. Öffnen Sie die WLAN-Einstellungen Ihres Telefons und fügen Sie es ein.",
     btnRescan: "Erneut scannen",
 
-    regoleScreenTitle: "Hausordnung",
-    regoleChooserSub: "Wählen Sie Ihren Trullo, um die Hausordnung anzuzeigen.",
+    regoleScreenTitle: "Nützliche Infos",
+    regoleChooserSub: "Wählen Sie Ihren Trullo, um die nützlichen Infos anzuzeigen.",
     regoleIncantoTitle: "Trullo Incanto",
-    regoleIncantoDesc: "Hausordnung und praktische Infos",
+    regoleIncantoDesc: "Nützliche Infos für Ihren Aufenthalt",
     regoleNidoTitle: "Trullo Il Nido",
-    regoleNidoDesc: "Hausordnung und praktische Infos",
+    regoleNidoDesc: "Nützliche Infos für Ihren Aufenthalt",
 
-    ruleIncantoScreenTitle: "Hausordnung — Trullo Incanto",
-    ruleNidoScreenTitle: "Hausordnung — Trullo Il Nido",
-    ruleSectionGeneraleTitle: "Allgemeine Regeln",
+    ruleIncantoScreenTitle: "Nützliche Infos — Trullo Incanto",
+    ruleNidoScreenTitle: "Nützliche Infos — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "Allgemeine Infos",
     ruleSectionPraticheTitle: "Praktische Hinweise",
     ruleSectionTvTitle: "Satelliten- und Digitalkanäle",
 
     ruleIncantoGeneraleHtml: `
       <li>Das Rauchen im Haus ist nicht gestattet.</li>
-      <li>Das Leitungswasser ist nicht trinkbar.</li>
       <li>Verwenden Sie keinen Alkohol zum Anzünden des Grills.</li>
       <li>Kinder müssen im Spielbereich stets von einem Erwachsenen begleitet werden.</li>
-      <li class="muted">Verursacht der Gast Schäden jeglicher Art in der Wohnung oder an der Einrichtung, ist er verpflichtet, die Eigentümer zu informieren, die sich vorbehalten, den entsprechenden Schadensbetrag in Rechnung zu stellen.</li>
-      <li class="muted">Die Eigentümer übernehmen keine Haftung für Unfälle von Erwachsenen und Minderjährigen, für Verlust, Diebstahl oder Beschädigung von Gegenständen der Gäste sowie für Schäden oder Diebstähle an auf dem Parkplatz abgestellten Fahrzeugen.</li>
-      <li class="muted">Besondere Sorgfalt gilt den Hausschlüsseln und der Fernbedienung für das Tor: Bei Verlust oder Beschädigung werden dem Gast die Kosten für den Austausch des Türschlosses bzw. der Fernbedienung in Rechnung gestellt.</li>
+      <li>Besondere Sorgfalt gilt den Hausschlüsseln und der Fernbedienung für das Tor: Bei Verlust oder Beschädigung werden dem Gast die Kosten für den Austausch des Türschlosses bzw. der Fernbedienung in Rechnung gestellt.</li>
     `,
     ruleIncantoPraticheHtml: `
       <li>Frische Handtücher befinden sich in den Schubladen der Schlafzimmer.</li>
@@ -568,7 +551,6 @@ const TRANSLATIONS = {
       <li>Bei Stromausfall das Tor manuell mit dem dafür vorgesehenen Schlüssel entriegeln.</li>
       <li>Schließen Sie die Außenfenster jedes Mal, wenn Sie den Trullo verlassen.</li>
       <li>Bei angekündigtem Regen das Bullaugenfenster im Schlafzimmer schließen.</li>
-      <li>Bei starkem Wind den Pavillon (Gazebo) schließen.</li>
       <li>Klappen Sie abends die Liegestühle zusammen (damit die Katzen nicht hinaufklettern); bei Regen bringen Sie sie ins Haus.</li>
       <li><strong>Holzheizung</strong>: Halten Sie die Anzeige zwischen 60° und 70°, nie über 80°. Lassen Sie nicht zu viel Asche im Kamin — entfernen Sie sie alle 2-3 Tage in den dafür vorgesehenen Eimer.</li>
     `,
@@ -579,12 +561,9 @@ const TRANSLATIONS = {
 
     ruleNidoGeneraleHtml: `
       <li>Das Rauchen im Haus ist nicht gestattet.</li>
-      <li>Das Leitungswasser ist nicht trinkbar.</li>
       <li>Verwenden Sie keinen Alkohol zum Anzünden des Grills.</li>
       <li>Kinder müssen im Spielbereich stets von einem Erwachsenen begleitet werden.</li>
-      <li class="muted">Verursacht der Gast Schäden jeglicher Art in der Wohnung oder an der Einrichtung, ist er verpflichtet, die Eigentümer zu informieren, die sich vorbehalten, den entsprechenden Schadensbetrag in Rechnung zu stellen.</li>
-      <li class="muted">Die Eigentümer übernehmen keine Haftung für Unfälle von Erwachsenen und Minderjährigen, für Verlust, Diebstahl oder Beschädigung von Gegenständen der Gäste sowie für Schäden oder Diebstähle an auf dem Parkplatz abgestellten Fahrzeugen.</li>
-      <li class="muted">Besondere Sorgfalt gilt den Hausschlüsseln und der Fernbedienung für das Tor: Bei Verlust oder Beschädigung werden dem Gast die Kosten für den Austausch des Türschlosses bzw. der Fernbedienung in Rechnung gestellt.</li>
+      <li>Besondere Sorgfalt gilt den Hausschlüsseln und der Fernbedienung für das Tor: Bei Verlust oder Beschädigung werden dem Gast die Kosten für den Austausch des Türschlosses bzw. der Fernbedienung in Rechnung gestellt.</li>
     `,
     ruleNidoPraticheHtml: `
       <li>Frische Handtücher befinden sich in den Schubladen des Schlafzimmers.</li>
@@ -676,8 +655,8 @@ const TRANSLATIONS = {
 
     navCheckinTitle: "Check-in en ligne",
     navCheckinDesc: "Complétez votre enregistrement avant l'arrivée.",
-    navRegoleTitle: "Règlement Intérieur",
-    navRegoleDesc: "Horaires, règles et infos utiles pour le séjour.",
+    navRegoleTitle: "Infos Utiles",
+    navRegoleDesc: "Horaires et infos utiles pour votre séjour.",
     navWifiTitle: "WiFi",
     navWifiDesc: "Scannez le QR code pour vous connecter automatiquement.",
     navFaqTitle: "FAQ",
@@ -690,7 +669,7 @@ const TRANSLATIONS = {
     navDoveSiamoDesc: "Adresse, carte et comment nous rejoindre.",
 
     tabHome: "Accueil",
-    tabRegole: "Règles",
+    tabRegole: "Infos",
     tabGuida: "Guide",
     tabVicino: "À Proximité",
     tabDoveSiamo: "Où Sommes-Nous",
@@ -762,27 +741,24 @@ const TRANSLATIONS = {
     wifiCopiedHint: "Mot de passe copié dans le presse-papiers. Ouvrez les paramètres WiFi de votre téléphone et collez-le.",
     btnRescan: "Scanner à nouveau",
 
-    regoleScreenTitle: "Règlement intérieur",
-    regoleChooserSub: "Sélectionnez votre trullo pour consulter le règlement intérieur.",
+    regoleScreenTitle: "Infos Utiles",
+    regoleChooserSub: "Sélectionnez votre trullo pour consulter les infos utiles.",
     regoleIncantoTitle: "Trullo Incanto",
-    regoleIncantoDesc: "Règlement intérieur et infos pratiques",
+    regoleIncantoDesc: "Infos utiles pour votre séjour",
     regoleNidoTitle: "Trullo Il Nido",
-    regoleNidoDesc: "Règlement intérieur et infos pratiques",
+    regoleNidoDesc: "Infos utiles pour votre séjour",
 
-    ruleIncantoScreenTitle: "Règlement — Trullo Incanto",
-    ruleNidoScreenTitle: "Règlement — Trullo Il Nido",
-    ruleSectionGeneraleTitle: "Règles générales",
+    ruleIncantoScreenTitle: "Infos Utiles — Trullo Incanto",
+    ruleNidoScreenTitle: "Infos Utiles — Trullo Il Nido",
+    ruleSectionGeneraleTitle: "Informations générales",
     ruleSectionPraticheTitle: "Notes pratiques",
     ruleSectionTvTitle: "Chaînes satellite et numériques",
 
     ruleIncantoGeneraleHtml: `
       <li>Il est interdit de fumer à l'intérieur de la maison.</li>
-      <li>L'eau du robinet n'est pas potable.</li>
       <li>N'utilisez pas d'alcool pour allumer le barbecue.</li>
       <li>Les enfants doivent toujours être accompagnés d'un adulte dans l'espace de jeux.</li>
-      <li class="muted">En cas de dommage de toute nature à l'appartement ou au mobilier, l'hôte est tenu d'en informer les propriétaires, qui se réservent le droit de demander le montant des dommages.</li>
-      <li class="muted">Les propriétaires déclinent toute responsabilité en cas de blessure d'adultes ou de mineurs, de perte, vol ou détérioration d'objets appartenant aux hôtes, ainsi qu'en cas de dommage ou vol concernant les véhicules garés sur le parking.</li>
-      <li class="muted">Une attention particulière doit être portée aux clés de la maison et à la télécommande du portail : en cas de perte ou de détérioration, les frais de remplacement de la serrure de la porte d'entrée et/ou de la télécommande seront à la charge de l'hôte.</li>
+      <li>Une attention particulière doit être portée aux clés de la maison et à la télécommande du portail : en cas de perte ou de détérioration, les frais de remplacement de la serrure de la porte d'entrée et/ou de la télécommande seront à la charge de l'hôte.</li>
     `,
     ruleIncantoPraticheHtml: `
       <li>Le linge de bain propre se trouve dans les tiroirs des chambres.</li>
@@ -790,7 +766,6 @@ const TRANSLATIONS = {
       <li>En cas de coupure de courant, débloquez manuellement le portail avec la clé prévue à cet effet.</li>
       <li>Fermez les fenêtres extérieures chaque fois que vous quittez le trullo.</li>
       <li>Fermez le hublot de la chambre en cas de pluie annoncée.</li>
-      <li>Fermez le gazebo en cas de vent fort.</li>
       <li>Le soir, repliez les chaises longues (pour éviter que les chats n'y montent) ; en cas de pluie, rentrez-les dans la maison.</li>
       <li><strong>Chauffage au bois</strong> : maintenez l'afficheur entre 60° et 70°, sans jamais dépasser 80°. Ne laissez pas trop de cendres dans la cheminée — retirez-les tous les 2-3 jours dans le seau prévu à cet effet.</li>
     `,
@@ -801,12 +776,9 @@ const TRANSLATIONS = {
 
     ruleNidoGeneraleHtml: `
       <li>Il est interdit de fumer à l'intérieur de la maison.</li>
-      <li>L'eau du robinet n'est pas potable.</li>
       <li>N'utilisez pas d'alcool pour allumer le barbecue.</li>
       <li>Les enfants doivent toujours être accompagnés d'un adulte dans l'espace de jeux.</li>
-      <li class="muted">En cas de dommage de toute nature à l'appartement ou au mobilier, l'hôte est tenu d'en informer les propriétaires, qui se réservent le droit de demander le montant des dommages.</li>
-      <li class="muted">Les propriétaires déclinent toute responsabilité en cas de blessure d'adultes ou de mineurs, de perte, vol ou détérioration d'objets appartenant aux hôtes, ainsi qu'en cas de dommage ou vol concernant les véhicules garés sur le parking.</li>
-      <li class="muted">Une attention particulière doit être portée aux clés de la maison et à la télécommande du portail : en cas de perte ou de détérioration, les frais de remplacement de la serrure de la porte d'entrée et/ou de la télécommande seront à la charge de l'hôte.</li>
+      <li>Une attention particulière doit être portée aux clés de la maison et à la télécommande du portail : en cas de perte ou de détérioration, les frais de remplacement de la serrure de la porte d'entrée et/ou de la télécommande seront à la charge de l'hôte.</li>
     `,
     ruleNidoPraticheHtml: `
       <li>Le linge de bain propre se trouve dans les tiroirs de la chambre.</li>
