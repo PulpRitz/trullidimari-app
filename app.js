@@ -560,7 +560,6 @@
   }
 
   function openPrivacyModal() {
-    lockHorizontalScroll();
     document.getElementById('privacyModal').classList.add('open');
     document.getElementById('privacyModal').setAttribute('aria-hidden', 'false');
   }
