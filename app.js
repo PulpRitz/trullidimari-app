@@ -716,5 +716,47 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  /* ------------------------------------------------------------------------
+     11. Pannello diagnostico temporaneo per il bug di overflow orizzontale
+         del modal privacy su Android reale (2026-09-02). Attivo solo con
+         ?debug=1 in URL, non tocca nulla in produzione normale.
+         RIMUOVERE una volta chiuso il bug.
+     ------------------------------------------------------------------------ */
+  function initOverflowDebugPanel() {
+    if (new URLSearchParams(location.search).get('debug') !== '1') return;
+    const panel = document.createElement('div');
+    panel.id = 'overflowDebugPanel';
+    panel.style.cssText = [
+      'position:fixed', 'top:0', 'left:0', 'right:0', 'z-index:99999',
+      'background:#ff0066', 'color:#fff', 'font:11px/1.4 monospace',
+      'padding:6px 8px', 'white-space:pre-wrap', 'word-break:break-all',
+      'max-height:40vh', 'overflow:auto', 'pointer-events:none'
+    ].join(';');
+    document.body.appendChild(panel);
+    function refresh() {
+      const html = document.documentElement;
+      const vv = window.visualViewport;
+      const lines = [
+        'html scrollW/clientW: ' + html.scrollWidth + ' / ' + html.clientWidth,
+        'body scrollW/clientW: ' + document.body.scrollWidth + ' / ' + document.body.clientWidth,
+        'window.innerWidth/outerWidth: ' + window.innerWidth + ' / ' + window.outerWidth,
+        'devicePixelRatio: ' + window.devicePixelRatio,
+        'visualViewport w/scale: ' + (vv ? vv.width + ' / ' + vv.scale : 'n/a'),
+        'scrollX: ' + window.scrollX,
+      ];
+      const panelEl = document.querySelector('.modal-panel');
+      if (panelEl) {
+        const r = panelEl.getBoundingClientRect();
+        lines.push('modal-panel rect: left=' + r.left.toFixed(1) + ' width=' + r.width.toFixed(1) + ' right=' + r.right.toFixed(1));
+      }
+      panel.textContent = lines.join('\n');
+    }
+    refresh();
+    window.addEventListener('resize', refresh);
+    window.addEventListener('scroll', refresh, true);
+    document.getElementById('btnOpenPrivacy').addEventListener('click', () => setTimeout(refresh, 250));
+    setInterval(refresh, 1000);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => { init(); initOverflowDebugPanel(); });
 })();
