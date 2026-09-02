@@ -110,10 +110,6 @@ a { color: inherit; text-decoration: none; }
 }
 .screen.active { display: flex; }
 
-/* Check-in non ha la tab bar (vedi app.js) — spazio in fondo normale, non
-   quello maggiorato per lasciarle posto. */
-#screen-checkin.active { padding-bottom: calc(28px + var(--sab)); }
-
 /* --------------------------------------------------------------------------
    Topbar (hamburger + wordmark) — sostituisce l'header per-schermata sulle
    schermate raggiunte da tab bar/righe home
