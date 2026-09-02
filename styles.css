@@ -696,8 +696,18 @@ a { color: inherit; text-decoration: none; }
 
 /* Input file "reale" (validato dal form) tenuto visivamente invisibile ma
    ancora renderizzato: display:none lo escluderebbe dalla validazione HTML5 */
+/* Pattern "sr-only" classico (width:1px + clip) NON basta: su Android
+   Chrome reale (verificato 2026-09-02) il widget nativo di <input
+   type="file"> ignora width/clip e si renderizza alla sua larghezza
+   piena nella posizione statica, sforando lo schermo e causando
+   overflow orizzontale su tutta la pagina (anche fuori da questo
+   componente, es. il modal privacy). Fix: forzarlo comunque fuori
+   viewport con un offset esplicito, indipendente dalla larghezza
+   che il browser decide di dargli. */
 .sr-only-file {
   position: absolute;
+  top: -9999px;
+  left: -9999px;
   width: 1px; height: 1px;
   padding: 0; margin: -1px;
   overflow: hidden;
