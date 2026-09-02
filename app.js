@@ -52,10 +52,9 @@
 
   // Nascosta del tutto sul Check-in: l'ospite deve arrivare in fondo al form
   // senza distrazioni (nessun link di uscita a portata di pollice). Decisione
-  // ripristinata dopo un tentativo di riattivarla — il bug di overflow
-  // orizzontale del modal privacy su Android non si è risolto nonostante
-  // vari fix (vedi storico commit), accettato come noto/minore: il link
-  // all'informativa resta cliccato raramente.
+  // indipendente dal bug di overflow orizzontale del modal privacy su
+  // Android, risolto il 2026-09-02 (min-width:0 mancante sui figli flex di
+  // .modal-panel impediva il wrap del testo — vedi storico commit).
   const TAB_BAR_HIDDEN_SCREENS = ['checkin'];
 
   function updateTabBarActive(screenId) {
