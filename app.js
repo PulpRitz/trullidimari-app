@@ -749,6 +749,32 @@
         const r = panelEl.getBoundingClientRect();
         lines.push('modal-panel rect: left=' + r.left.toFixed(1) + ' width=' + r.width.toFixed(1) + ' right=' + r.right.toFixed(1));
       }
+
+      // Scansiona TUTTI gli elementi della pagina (modal aperto o no) e
+      // segnala quelli il cui bordo destro sfora la larghezza visibile:
+      // il primo/i primi della lista sono la causa radice dell'overflow.
+      const viewportW = vv ? vv.width : window.innerWidth;
+      const offenders = [];
+      document.querySelectorAll('body *').forEach((el) => {
+        if (el.id === 'overflowDebugPanel' || el.closest('#overflowDebugPanel')) return;
+        const r = el.getBoundingClientRect();
+        if (r.width === 0 && r.height === 0) return;
+        const overflow = r.right - viewportW;
+        if (overflow > 2) {
+          offenders.push({ el, overflow, r });
+        }
+      });
+      offenders.sort((a, b) => b.overflow - a.overflow);
+      lines.push('--- top elementi in overflow (right - viewportW) ---');
+      offenders.slice(0, 8).forEach((o) => {
+        const el = o.el;
+        const tag = el.tagName.toLowerCase() +
+          (el.id ? '#' + el.id : '') +
+          (el.className && typeof el.className === 'string' ? '.' + el.className.trim().replace(/\s+/g, '.') : '');
+        lines.push('+' + o.overflow.toFixed(0) + 'px  ' + tag + '  (w=' + o.r.width.toFixed(0) + ' left=' + o.r.left.toFixed(0) + ')');
+      });
+      if (offenders.length === 0) lines.push('(nessun elemento in overflow trovato)');
+
       panel.textContent = lines.join('\n');
     }
     refresh();
