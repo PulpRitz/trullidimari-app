@@ -54,13 +54,21 @@
    window.scrollY resta sempre 0 e la tab bar (che ascolta "scroll" su
    window) non riceve mai eventi. body usa min-height per restare comunque
    alto quanto lo schermo sulle pagine corte. */
-html { height: 100%; overflow-x: hidden; overscroll-behavior-x: none; }
+html {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
   overscroll-behavior-x: none;
   font-family: var(--font-sans);
   background: var(--bg-main);
